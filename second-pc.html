@@ -1,0 +1,2608 @@
+﻿<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>2nd PC setups</title>
+<script src='mino-board.js'></script>
+<style>
+html
+{
+	font-family: sans-serif;
+	font-size: 14px;
+	background-color: #e4e4e4;
+	color: #111;
+}
+
+a {color: #0066cc;}
+a:visited {color: #6a40c6;}
+a:active {color: #ee0000;}
+a:hover {background-color: #ffffff;}
+
+section
+{
+	margin-bottom: 2.5rem;
+}
+
+.setup-display
+{
+	width: 100%;
+	height: 118px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: pre;
+	scrollbar-width: thin;
+}
+
+.setup-display mino-board > svg
+{
+	margin-right: 16px;
+}
+
+.setup-display[data-hide-generic] mino-board.generic-setup {display: none;}
+mino-board.generic-setup {}
+mino-board.specific-setup {}
+mino-board.specific-setup.dupe {display:none;} /* hide dupe-piece setups by default */
+
+a.piece-comp
+{
+	text-decoration: underline dotted;
+	font-family: monospace;
+	color: #0066cc;
+}
+
+
+.solves
+{
+	padding: 1rem;
+}
+
+.solves mino-board > svg
+{
+	margin-right: 16px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+main[data-mirror='false'] [data-mirror='true'], main[data-mirror='true'] [data-mirror='false']
+{
+	display: none;
+}
+
+details
+{
+	background-color: #d6d6d6;
+	color: #000000;
+}
+
+summary
+{
+	background-color: #c4c4c4;
+	color: #000000;
+	padding-left: 1rem;
+	height: 2rem;
+	line-height: 2rem;
+}
+</style>
+</head>
+<body>
+<noscript><p>This page uses JavaScript to render diagrams.</p></noscript>
+<main data-mirror='false'>
+<h1>Second PC setups and solves</h1>
+<p>
+This is a collection of the second PC setups and solves I use (or plan to use). This is largely focused on continuing into DPC, and hence O and S/Z saves are prioritised, rather than T and O as with setups meant for pure PC. Furthermore, especially for the bad-parity cases, many of the setups shown here have theoretically better alternatives, but those can be substantially harder to solve.
+</p>
+<p>
+"not 100%": There is some order of the given pieces where the setup cannot be built.<br>
+"no hold": This setup can always be built with the pieces dropped in any possible order. (For dupe 2nds, the first piece is always assumed to be the duplicate piece.)
+</p>
+<p>
+The solutions given here are not always the smallest covering sets (aka "strict minimals").
+</p>
+<p>
+Main resources:
+<ul>
+<li><a href='https://knewjade.github.io/tetris-knowledge/2pcsystem/index.html'>knewjade's setups</a> (Japanese)</li>
+<li><a href='https://four.lol/perfect-clears/2nd'>FOUR: 2nd PC Patterns</a> (this is largely a translated and reorganised version of knewjade's website)</li>
+<li><a href='https://docs.google.com/spreadsheets/d/1gW7h5DmNcD1smFkVQPXmoEzIwB41DegMc9V-GSmQvvQ/edit#gid=679066884'>rotf.lol 2nd PC</a> (<a href='https://rotf.lol/2ndpc'>backup URL</a>)</li>
+<li>Hard Drop Tetris Wiki: <a href='https://harddrop.com/wiki/Perfect_Clear_Opener#Following_Up'>setups</a>, <a href='https://harddrop.com/wiki/PC_Opener_Continuations'>solutions</a></li>
+<li><a href='https://docs.google.com/document/d/17ABWvCDruGB1P92wPqp8NIPmqJJoEIS0Vfh4RSGms8w/edit'>Marfung37's advanced 2nd PC setups</a></li>
+<li><a href='https://docs.google.com/document/d/1pgMeHopKipjdp5pmCiwcLk6vKXzdFWaHS8fokFqwWZ4/edit'>Queue-Based Perfect Clearing: 2nd PC</a></li>
+</ul>
+</p>
+<!--
+<p>
+Because of parity, the number of J or L pieces and the number of T pieces fundamentally affect the types of setups that can be built. (JL affect column parity, while T affects checkerboard parity and potentially also column parity.) This is a general ranking of which 2nd PC cases are better, from best to worst.
+<ol>
+<li>1 JL, 1 T</li>
+<li>0 or 2 JL, 1 T</li>
+<li>0 or 2 JL, 0 T</li>
+<li>1 JL, 0 T</li>
+<li>duplicate-piece cases</li>
+</ol>
+</p>
+<p>
+First two are more or less equal, but the first category is more common as the second category is completely impossible with PCO 1st. Having a T piece going into 2nd PC means that it's <i>a priori</i> possible for the main solutions to not involve split pieces, while saving something other than T; no-split solutions usually have higher individual percentages (due to having less/no skim dependencies), which usually also means less solutions needed to attain high coverage. No-split solutions are also easier to learn.
+</p>
+<p>
+One rung below that is even JL, no T. Due to the aforementioned reason, it's harder to avoid saving T, but otherwise these cases are still mostly decent.
+</p>
+<p>
+Below that is the worst: one JL, no T. If T comes last in the third bag, then any PC solution <em>must</em> save J or L, by finishing the PC with a horizontal T. It is outright impossible to save T because of column parity. The setups currently listed here either: (i) have mediocre PC rates and no consistent DPC recovery or (ii) have good (95% or higher) PC rates but are very hard to solve.
+</p>
+<p>
+Dupe-piece 2nds are rather rare, especially with 1st PC setups that use 6 or 7 pieces (e.g. PCO, Grace, Jigsaw). Aside from the cases where the four pieces can be used to set up a known shape (e.g. LTZZ forming the tub setup), this usually ends up just being freestyled, which is bad for speed or success rate.
+</p>
+-->
+<section>
+<h2><a id='how-to-learn'>This page is super long. How am I supposed to memorise all of this?</a></h2>
+<p>
+Obviously, you don't learn all of this at once. You can freestyle the cases you haven't learnt yet. I don't know everything here by heart either.
+</p>
+<p>
+Some of the setups here are ones that I don't even intend to learn, but others have claimed that they are superior in some way (better tetris chances, better save-O chances, etc.). I have not evaluated all of those claims. You can try for yourself and pick your favourites, or you can just follow my personal list of setups (anything that doesn't say "prefer different setup").
+</p>
+</section>
+<section>
+<h2><a id='one-t-setups'>One T</a></h2>
+<section>
+<h3><a id='tub-plus-vertical-i'>Tub + vertical I (100% with 180)</a></h3>
+<div class='setup-display'>
+<mino-board class='generic-setup'>
+_________X
+____X___XX
+____XXXXXX
+____XXXXXX
+</mino-board>
+<mino-board class='specific-setup'>
+I_________
+IT___J____
+ITTSSJ____
+ITSSJJ____
+</mino-board>
+<mino-board class='specific-setup'>
+_________I
+____L___TI
+____LZZTTI
+____LLZZTI
+</mino-board>
+<mino-board class='specific-setup'>
+_________T
+____J___TT
+____JJJZZT
+____IIIIZZ
+</mino-board>
+<mino-board class='specific-setup'>
+T_________
+TT___L____
+TSSLLL____
+SSIIII____
+</mino-board>
+<mino-board class='specific-setup'>
+S_________
+SS___T____
+JSZZTT____
+JJJZZT____
+</mino-board>
+<mino-board class='specific-setup'>
+_________Z
+____T___ZZ
+____TTSSZL
+____TSSLLL
+</mino-board>
+<mino-board class='specific-setup'>
+I_________
+IL___J____
+ILTTTJ____
+ILLTJJ____
+</mino-board>
+<mino-board class='specific-setup dupe'>
+T_________
+TT___J____
+TSSSSJ____
+SSSSJJ____
+</mino-board>
+<mino-board class='specific-setup dupe'>
+_________T
+____L___TT
+____LZZZZT
+____LLZZZZ
+</mino-board>
+<mino-board class='specific-setup dupe'>
+S_________
+SS___J____
+JSTTTJ____
+JJJTJJ____
+</mino-board>
+<mino-board class='specific-setup dupe'>
+_________Z
+____L___ZZ
+____LTTTZL
+____LLTLLL
+</mino-board>
+<mino-board class='specific-setup dupe'>
+I_________
+IT___L____
+ITTLLL____
+ITIIII____
+</mino-board>
+<mino-board class='specific-setup dupe'>
+_________I
+____J___TI
+____JJJTTI
+____IIIITI
+</mino-board>
+</div>
+<p>
+99.76% PC; 100% PC with 180° spins. The "open" side of the tub has to be next to the blank 4×4 square in order for the 180°-spin solution to work.
+</p>
+
+<p>
+Normal builds: <span class='build-list'>IJTS/ILTZ (no hold), JTSZ/LTSZ, IJTZ/ILTS (not 100%), IJLT (prefer different setup)</span>.<br>
+Dupe builds: <span class='build-list'>JTSS/LTZZ (no hold), JJTS/LLTZ (no hold), IIJT/IILT (no hold)</span>.
+</p>
+
+<p>
+Note that the build doesn't necessarily use a vertical I piece, e.g. with IJTZ.
+</p>
+
+<p>
+Solutions build a box out of J, L and one of OSZ, while filling in the tub. (Some solutions require skimming, e.g. by dropping S first, then L and J on top of it.) Mostly save O/S/Z, with a small chance of save I. Decent tetris chance.
+</p>
+
+<details>
+<summary>Solves</summary>
+<div class='solves' data-automirror='yes'>
+<mino-board>
+LLLITTTSSX
+LZJIXTSSXX
+ZZJIXXXXXX
+ZJJIXXXXXX
+</mino-board>
+<mino-board>
+JJJIZZTTTX
+OOJIXZZTXX
+OOLIXXXXXX
+LLLIXXXXXX
+</mino-board>
+<mino-board>
+LLLITTTSSX
+LOOIXTSSXX
+JOOIXXXXXX
+JJJIXXXXXX
+</mino-board>
+<mino-board>
+IJJJZZTTTX
+ILSJXZZTXX
+ILSSXXXXXX
+ILLSXXXXXX
+</mino-board>
+<mino-board>
+JJLLTTTSSX
+JOOLXTSSXX
+JOOLXXXXXX
+IIIIXXXXXX
+</mino-board>
+<mino-board>
+JJLLZZTTTX
+JOOLXZZTXX
+JOOLXXXXXX
+IIIIXXXXXX
+</mino-board>
+<mino-board>
+LLLITTTSSX
+JJJIXTSSXX
+ZZJIXXXXXX
+LZZIXXXXXX
+</mino-board>
+<mino-board>
+JJLIZZTTTX
+LLLIXZZTXX
+JOOIXXXXXX
+JOOIXXXXXX
+</mino-board>
+<mino-board>
+LLLJTTTSSX
+LZZJXTSSXX
+OOZZXXXXXX
+OOJJXXXXXX
+</mino-board>
+<p>
+The last solve requires a 180° J spin (L spin in the mirror), and is applicable to queues like [OSZ]![IJL]!T (with I kept in hold). Otherwise, for other queues, one of the other eight solves will be applicable, without needing 180° spins. The solves shown here cover every queue, but there are many more useful solves by building the IJLO/IJLS/IJLZ box differently.
+</p>
+</div>
+<!--
+java -jar sfinder-fixed-180.jar cover --tetfu 'v115@GhA8DeA8CeB8DeF8DeF8Je3CJvhElhBeqBcpBifB5l?B' 'v115@GhA8DeA8CeB8DeF8DeF8Je0BJvhEliByuBTkBmfB5l?B' 'v115@GhA8DeA8CeB8DeF8DeF8Je3CJvhElhB2uBzkBifB5l?B' 'v115@GhA8DeA8CeB8DeF8DeF8Je0BJvhEliBqpB/qBGgBZk?B' 'v115@GhA8DeA8CeB8DeF8DeF8Je3CJvhElhBxuBzpBOpB6q?B' 'v115@GhA8DeA8CeB8DeF8DeF8Je0BJvhEliBxuBzpBOpB6q?B' 'v115@GhA8DeA8CeB8DeF8DeF8Je3CJvhElhB5lB0pBmkBip?B' 'v115@GhA8DeA8CeB8DeF8DeF8Je0BJvhEliBzpBykB5lBOp?B'
+# Output
+success:
+40.00 % [2016/5040]: http://fumen.zui.jp/?v115@GhA8DeA8CeB8DeF8DeF8Je3CJvhElhBeqBcpBifB5l?B
+42.86 % [2160/5040]: http://fumen.zui.jp/?v115@GhA8DeA8CeB8DeF8DeF8Je0BJvhEliByuBTkBmfB5l?B
+42.86 % [2160/5040]: http://fumen.zui.jp/?v115@GhA8DeA8CeB8DeF8DeF8Je3CJvhElhB2uBzkBifB5l?B
+40.00 % [2016/5040]: http://fumen.zui.jp/?v115@GhA8DeA8CeB8DeF8DeF8Je0BJvhEliBqpB/qBGgBZk?B
+37.14 % [1872/5040]: http://fumen.zui.jp/?v115@GhA8DeA8CeB8DeF8DeF8Je3CJvhElhBxuBzpBOpB6q?B
+37.14 % [1872/5040]: http://fumen.zui.jp/?v115@GhA8DeA8CeB8DeF8DeF8Je0BJvhEliBxuBzpBOpB6q?B
+19.05 % [960/5040]: http://fumen.zui.jp/?v115@GhA8DeA8CeB8DeF8DeF8Je3CJvhElhB5lB0pBmkBip?B
+19.05 % [960/5040]: http://fumen.zui.jp/?v115@GhA8DeA8CeB8DeF8DeF8Je0BJvhEliBzpBykB5lBOp?B
+>>>
+OR  = 99.76 % [5028/5040]
+-->
+</details>
+
+<p>Reference: <a href='https://knewjade.github.io/tetris-knowledge/2pcsystem/second_with_t.html#a'>knewjade's T-ari pattern A</a>.</p>
+<p></p>
+</section>
+<section>
+<h3><a id='tub-plus-horizontal-i'>Tub + horizontal I (100%)</a></h3>
+<div class='setup-display'>
+<mino-board class='generic-setup'>
+__________
+_____X___X
+_____XXXXX
+XXXX_XXXXX
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+_____L___T
+_____LZZTT
+IIII_LLZZT
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+T___J_____
+TTSSJ_____
+TSSJJ_IIII
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+_____L___J
+_____LTTTJ
+IIII_LLTJJ
+</mino-board>
+<mino-board class='specific-setup dupe'>
+__________
+T___L_____
+TTLLL_____
+TIIII_IIII
+</mino-board>
+<mino-board class='specific-setup dupe'>
+__________
+_____J___T
+_____JJJTT
+IIII_IIIIT
+</mino-board>
+</div>
+<p>
+100% PC. The I piece can also be shifted to be directly touching the tub, which is still 100% PC.
+</p>
+
+<p>
+Normal builds: <span class='build-list'>IJTS/ILTZ (no hold), IJLT</span>.<br>
+Dupe builds: <span class='build-list'>IIJT/IILT (no hold)</span>.
+</p>
+
+<p>
+As with the previous tub setup, the solves build a JLO/JLS/JLZ box atop the I piece. The chances of saving O is lower, but only two solves are needed, it can always save O/S/Z, solving never needs 180° spins, and it's always possible to get save-O/S/Z tetris as long as the last piece is I, O, S or Z.
+</p>
+
+<details>
+<summary>Solves</summary>
+<div class='solves' data-automirror='yes'>
+<mino-board>
+JJLLIZZTTT
+JOOLIXZZTX
+JOOLIXXXXX
+XXXXIXXXXX
+</mino-board>
+<mino-board>
+JJLLITTTSS
+JOOLIXTSSX
+JOOLIXXXXX
+XXXXIXXXXX
+</mino-board>
+<mino-board>
+JJSSIZZTTT
+JSSLIXZZTX
+JLLLIXXXXX
+XXXXIXXXXX
+</mino-board>
+<mino-board>
+LOOJITTTSS
+LOOJIXTSSX
+LLJJIXXXXX
+XXXXIXXXXX
+</mino-board>
+<mino-board>
+LOOJIZZTTT
+LOOJIXZZTX
+LLJJIXXXXX
+XXXXIXXXXX
+</mino-board>
+<mino-board>
+LLLJIZZTTT
+LSSJIXZZTX
+SSJJIXXXXX
+XXXXIXXXXX
+</mino-board>
+<p>
+The smallest covering sets have just two solutions: pick either of the first two, and any of the next three solves listed above. (E.g. with the first and third solves, the I, J, T, Z pieces all have fixed placements.)
+</p>
+<p>
+The two save-O solves above are 100% tetris chance if O or I is last, and likewise for the two save-S solves and the two save-Z solves.
+</p>
+<p>
+These additional solves increase save-O chances slightly when the last piece is J, L or T (so tetris PC is impossible anyway and saving O should be prioritised).
+</p>
+<mino-board>
+ZZLLITTTSS
+JZZLIXTSSX
+JJJLIXXXXX
+XXXXIXXXXX
+</mino-board>
+<mino-board>
+LJJJITTTSS
+LZZJIXTSSX
+LLZZIXXXXX
+XXXXIXXXXX
+</mino-board>
+<p>
+With all eight solves, there is a 2/7 = 28.57% chance of save-O tetris, 2/7 = 28.57% chance of save-S/Z tetris, 1782/5040 = 35.36% chance of save-O no tetris, 378/5040 = 7.50% chance of save-S/Z no tetris.
+</p>
+</div>
+<!--
+java -jar sfinder-fixed-180.jar cover --tetfu 'v115@MhA8CeA8EeI8AeE8JeZGYZAFLDmClcJSAVDEHBEooR?BJoAVBv3/VC0AAAAvhEzpBUnBOpB6qBFtB' 'v115@MhA8CeA8EeI8AeE8JeZGYZAFLDmClcJSAVDEHBEooR?BJoAVBPt/VC0AAAAvhEzpBXoBOpB6qBFsB' 'v115@MhA8CeA8EeI8AeE8JeZGYZAFLDmClcJSAVDEHBEooR?BJoAVBsHkPC0AAAAvhESvBUnBXlBOpBFtB' 'v115@MhA8CeA8EeI8AeE8JeZGYZAFLDmClcJSAVDEHBEooR?BJoAVBz/LgC0AAAAvhEXoB+qBKpBzpBFsB' 'v115@MhA8CeA8EeI8AeE8JeZGYZAFLDmClcJSAVDEHBEooR?BJoAVB6/LgC0AAAAvhEUnB+qBKpBzpBFtB' 'v115@MhA8CeA8EeI8AeE8JeZGYZAFLDmClcJSAVDEHBEooR?BJoAVB6vTxCsAAAAvhEUnB+qB3pBFtBipB' --mode tetris
+# Setup Field
+[v115@MhA8CeA8EeI8AeE8JeZGYZAFLDmClcJSAVDEHBEooR?BJoAVBv3/VC0AAAAvhEzpBUnBOpB6qBFtB]
+__________
+JJLLIZZTTT
+JOOLIXZZTX
+JOOLIXXXXX
+XXXXIXXXXX
+
+[v115@MhA8CeA8EeI8AeE8JeZGYZAFLDmClcJSAVDEHBEooR?BJoAVBPt/VC0AAAAvhEzpBXoBOpB6qBFsB]
+__________
+JJLLITTTSS
+JOOLIXTSSX
+JOOLIXXXXX
+XXXXIXXXXX
+
+[v115@MhA8CeA8EeI8AeE8JeZGYZAFLDmClcJSAVDEHBEooR?BJoAVBsHkPC0AAAAvhESvBUnBXlBOpBFtB]
+__________
+JJSSIZZTTT
+JSSLIXZZTX
+JLLLIXXXXX
+XXXXIXXXXX
+
+[v115@MhA8CeA8EeI8AeE8JeZGYZAFLDmClcJSAVDEHBEooR?BJoAVBz/LgC0AAAAvhEXoB+qBKpBzpBFsB]
+__________
+LOOJITTTSS
+LOOJIXTSSX
+LLJJIXXXXX
+XXXXIXXXXX
+
+[v115@MhA8CeA8EeI8AeE8JeZGYZAFLDmClcJSAVDEHBEooR?BJoAVB6/LgC0AAAAvhEUnB+qBKpBzpBFtB]
+__________
+LOOJIZZTTT
+LOOJIXZZTX
+LLJJIXXXXX
+XXXXIXXXXX
+
+[v115@MhA8CeA8EeI8AeE8JeZGYZAFLDmClcJSAVDEHBEooR?BJoAVB6vTxCsAAAAvhEUnB+qB3pBFtBipB]
+__________
+LLLJIZZTTT
+LSSJIXZZTX
+SSJJIXXXXX
+XXXXIXXXXX
+
+# Output
+success:
+21.43 % [1080/5040]: http://fumen.zui.jp/?v115@MhA8CeA8EeI8AeE8JeZGYZAFLDmClcJSAVDEHBEooR?BJoAVBv3/VC0AAAAvhEzpBUnBOpB6qBFtB
+21.43 % [1080/5040]: http://fumen.zui.jp/?v115@MhA8CeA8EeI8AeE8JeZGYZAFLDmClcJSAVDEHBEooR?BJoAVBPt/VC0AAAAvhEzpBXoBOpB6qBFsB
+19.05 % [960/5040]: http://fumen.zui.jp/?v115@MhA8CeA8EeI8AeE8JeZGYZAFLDmClcJSAVDEHBEooR?BJoAVBsHkPC0AAAAvhESvBUnBXlBOpBFtB
+19.05 % [960/5040]: http://fumen.zui.jp/?v115@MhA8CeA8EeI8AeE8JeZGYZAFLDmClcJSAVDEHBEooR?BJoAVBz/LgC0AAAAvhEXoB+qBKpBzpBFsB
+19.05 % [960/5040]: http://fumen.zui.jp/?v115@MhA8CeA8EeI8AeE8JeZGYZAFLDmClcJSAVDEHBEooR?BJoAVB6/LgC0AAAAvhEUnB+qBKpBzpBFtB
+19.05 % [960/5040]: http://fumen.zui.jp/?v115@MhA8CeA8EeI8AeE8JeZGYZAFLDmClcJSAVDEHBEooR?BJoAVB6vTxCsAAAAvhEUnB+qB3pBFtBipB
+>>>
+OR  = 57.14 % [2880/5040]
+AND = 1.19 % [60/5040]
+
+-->
+</details>
+</section>
+<section>
+<h3><a id='tub-hold-o'>Tub, hold O (100% with 180)</a></h3>
+<div class='setup-display'>
+<mino-board class='generic-setup'>
+__________
+_____X___X
+_____XXXXX
+_____XXXXX
+</mino-board>
+<mino-board class='specific-setup' data-hold='o'>
+__________
+_____L___T
+_____LZZTT
+_____LLZZT
+</mino-board>
+<mino-board class='specific-setup' data-hold='o'>
+__________
+T___J_____
+TTSSJ_____
+TSSJJ_____
+</mino-board>
+<mino-board class='specific-setup' data-hold='o'>
+__________
+_____L___J
+_____LTTTJ
+_____LLTJJ
+</mino-board>
+<mino-board class='specific-setup' data-hold='o'>
+__________
+L___J_____
+LTTTJ_____
+LLTJJ_____
+</mino-board>
+<mino-board class='specific-setup' data-hold='o'>
+__________
+T___L_____
+TTLLL_____
+TIIII_____
+</mino-board>
+<mino-board class='specific-setup' data-hold='o'>
+__________
+_____J___T
+_____JJJTT
+_____IIIIT
+</mino-board>
+</div>
+<p>
+99.05% PC; 100% PC with 180° spins.
+</p>
+
+<p>
+Normal builds: <span class='build-list'>JOTS/LOTZ, JLOT (two builds; not 100%; prefer different setup), IJOT/ILOT (not 100%; prefer different setup)</span>.
+</p>
+
+<p>
+Main save-O solutions involve building an IJLOS/IJLOZ box. The only redeeming quality of this setup is its high save-O chances (89.29%)<!--TODO: verify this number-->; there is zero tetris or t-spin chance, and the solves are sometimes hard to spot, especially with late JL.
+</p>
+
+<details>
+<summary>Solves</summary>
+<div class='solves' data-automirror='yes'>
+<mino-board>
+IIIILTTTSS
+JJLLLXTSSX
+JOOOOXXXXX
+JOOOOXXXXX
+</mino-board>
+<mino-board>
+JIIIITTTSS
+JJJLLXTSSX
+OOOOLXXXXX
+OOOOLXXXXX
+</mino-board>
+<mino-board>
+JIIIITTTSS
+JJJOOXTSSX
+OOLLLXXXXX
+OOLOOXXXXX
+</mino-board>
+<mino-board>
+IIIILTTTSS
+ZZLLLXTSSX
+JZZOOXXXXX
+JJJOOXXXXX
+</mino-board>
+<mino-board>
+ILLOOTTTSS
+IJJOOXTSSX
+IJLOOXXXXX
+IJLOOXXXXX
+</mino-board>
+<mino-board>
+IJJOOZZTTT
+ILLOOXZZTX
+IJLOOXXXXX
+IJLOOXXXXX
+</mino-board>
+<mino-board>
+ILLLJTTTSS
+ILZZJXTSSX
+IOOZZXXXXX
+IOOJJXXXXX
+</mino-board>
+<p>
+As with the tub + vertical I setup, the last solve here requires a 180° spin, but the dependencies are more complicated. The seven solutions here cover every queue and always save O, S or Z. Many more save-O solutions are needed to attain &gt;85% save-O rates.
+</p>
+</div>
+</details>
+
+<p>
+Reference: <a href='https://docs.google.com/document/d/17ABWvCDruGB1P92wPqp8NIPmqJJoEIS0Vfh4RSGms8w/edit#heading=h.4piun7eyz22o'>Marfung37's 2nd PC setups: TLZO</a>.
+</p>
+</section>
+<section>
+<h3><a id='butter-tower-plus-t-hole'>Butter tower + T hole (97.14% to 99.56%)</a></h3>
+<div class='setup-display'>
+<mino-board class='generic-setup'>
+_______X__
+X_X____X__
+XXX____XXX
+XXX____XXX
+</mino-board>
+<mino-board class='specific-setup'>
+I_________
+IT_J______
+ITTJ____OO
+ITJJ____OO
+</mino-board>
+<mino-board class='specific-setup'>
+_________I
+______L_TI
+OO____LTTI
+OO____LLTI
+</mino-board>
+<mino-board class='specific-setup'>
+S_________
+SS_T______
+JSTT____OO
+JJJT____OO
+</mino-board>
+<mino-board class='specific-setup'>
+T_________
+TT_J______
+TSSJ____OO
+SSJJ____OO
+</mino-board>
+<mino-board class='specific-setup'>
+_________Z
+______T_ZZ
+OO____TTZL
+OO____TLLL
+</mino-board>
+<mino-board class='specific-setup'>
+_________T
+______L_TT
+OO____LZZT
+OO____LLZZ
+</mino-board>
+<mino-board class='specific-setup'>
+_________J
+____L_T__J
+____LTTTJJ
+____LLIIII
+</mino-board>
+<mino-board class='specific-setup'>
+L_________
+L__T_J____
+LLTTTJ____
+IIIIJJ____
+</mino-board>
+<mino-board class='specific-setup'>
+___Z______
+T_ZZ______
+TTZJJJ____
+TIIIIJ____
+</mino-board>
+<mino-board class='specific-setup'>
+______S___
+______SS_T
+____LLLSTT
+____LIIIIT
+</mino-board>
+<mino-board class='specific-setup'>
+S_________
+SS_T______
+JSTTTL____
+JJJLLL____
+</mino-board>
+<mino-board class='specific-setup'>
+_________Z
+______T_ZZ
+____JTTTZL
+____JJJLLL
+</mino-board>
+<mino-board class='specific-setup dupe'>
+_________I
+______T_JI
+____JTTTJI
+____JJJJJI
+</mino-board>
+<mino-board class='specific-setup dupe'>
+I_________
+IL_T______
+ILTTTL____
+ILLLLL____
+</mino-board>
+<mino-board class='specific-setup dupe'>
+I_________
+IT_J______
+ITTJJJ____
+ITIIII____
+</mino-board>
+<mino-board class='specific-setup dupe'>
+_________I
+______L_TI
+____LLLTTI
+____IIIITI
+</mino-board>
+<mino-board class='specific-setup dupe'>
+_________J
+L_T______J
+LTT____JJJ
+LLT____JJJ
+</mino-board>
+<mino-board class='specific-setup dupe'>
+L_________
+L______T_J
+LLL____TTJ
+LLL____TJJ
+</mino-board>
+</div>
+<p>
+97.14% PC baseline. There are many "equivalent" setups, given by some permutation of a 4×4 blank space, a 3×4 box missing a T piece, a vertical I, and an O piece. (Might not actually use I or O pieces.) If the O is next to the blank space, 99.56% PC.
+</p>
+
+<p>
+Normal builds: <span class='build-list'>IJOT/ILOT, JOTS/LOTZ, IJLT (two builds; prefer different setup), IJTZ/ILTS (not 100%; prefer different setup), JLTS/JLTZ (not 100%; prefer different setup)</span>.<br>
+Dupe builds: <span class='build-list'>IJJT/ILLT (no hold), IIJT/IILT (no hold), JJLT/JLLT</span>.
+</p>
+
+<details>
+<summary>Solves</summary>
+<div class='solves' data-automirror='yes'>
+<mino-board>
+IIIILTTTSS
+JJLLLXTSSX
+JOOOOXXXXX
+JOOOOXXXXX
+</mino-board>
+<p>
+blah blah blah
+</p>
+<mino-board>
+XTTTLOOJJJ
+XXTXLOOSSJ
+XXXXLLSSXX
+XXXXIIIIXX
+</mino-board>
+<mino-board>
+XTTTLLLJJJ
+XXTXLZZSSJ
+XXXXOOSSXX
+XXXXOOZZXX
+</mino-board>
+<mino-board>
+XTTTLLLJJJ
+XXTXLZZSSJ
+XXXXOOZZXX
+XXXXOOSSXX
+</mino-board>
+</div>
+</details>
+
+<p>Reference: <a href='https://knewjade.github.io/tetris-knowledge/2pcsystem/second_with_t.html#b'>knewjade's T-ari pattern B</a>.</p>
+</section>
+<section>
+<h3><a id='setup-id'>Butter tower + vertical T hole (77.46%)</a></h3>
+<div class='setup-display'>
+<mino-board class='generic-setup'>
+XXX_______
+XX________
+XXX_XX____
+XXXXXX____
+</mino-board>
+<mino-board class='specific-setup'>
+LLL_______
+LZ________
+ZZT_OO____
+ZTTTOO____
+</mino-board>
+<mino-board class='specific-setup'>
+TTT_______
+LT________
+LZZ_OO____
+LLZZOO____
+</mino-board>
+<mino-board class='specific-setup'>
+_______JJJ
+________SJ
+____OO_TSS
+____OOTTTS
+</mino-board>
+<mino-board class='specific-setup'>
+_______TTT
+________TJ
+____OO_SSJ
+____OOSSJJ
+</mino-board>
+<mino-board class='specific-setup'>
+_______LLI
+________LI
+____OO_TLI
+____OOTTTI
+</mino-board>
+<mino-board class='specific-setup'>
+IJJ_______
+IJ________
+IJT_OO____
+ITTTOO____
+</mino-board>
+</div>
+<p>
+77.46% PC; 100% PC if T is within the first three pieces. Bad column parity.
+</p>
+
+<p>
+Normal builds: <span class='build-list'>JOTS/LOTZ, IJOT/ILOT (prefer different setup)</span>.
+</p>
+
+<p>This setup should only be used if you see a T piece early in the next bag, from which you can get a t-spin null for extra points. The solves for early T are identical to the previous setup.</p>
+
+<details>
+<summary>Solves</summary>
+<div class='solves' data-automirror='yes'>
+<mino-board>
+IIIILTTTSS
+JJLLLXTSSX
+JOOOOXXXXX
+JOOOOXXXXX
+</mino-board>
+<p>
+blah blah blah
+</p>
+<mino-board>
+IIIILTTTSS
+JJLLLXTSSX
+JOOOOXXXXX
+JOOOOXXXXX
+</mino-board>
+</div>
+</details>
+</section>
+<section>
+<h3><a id='knoll-plus-jo'>Knoll + JO/LO (100%)</a></h3>
+<div class='setup-display'>
+<mino-board class='generic-setup'>
+__________
+_________X
+_XX_XXX__X
+_XXXXXXXXX
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+_________J
+_OO_TZZ__J
+_OOTTTZZJJ
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+_________J
+OO__TZZ__J
+OO_TTTZZJJ
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+L_________
+L__SST_OO_
+LLSSTTTOO_
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+L_________
+L__SST__OO
+LLSSTTT_OO
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+_________J
+_OO_SST__J
+_OOSSTTTJJ
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+_________J
+OO__SST__J
+OO_SSTTTJJ
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+L_________
+L__TZZ_OO_
+LLTTTZZOO_
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+L_________
+L__TZZ__OO
+LLTTTZZ_OO
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+_______J__
+__TZZ__JJJ
+_TTTZZIIII
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+__L_______
+LLL__SST__
+IIIISSTTT_
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+_______J__
+__SST__JJJ
+_SSTTTIIII
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+__L_______
+LLL__TZZ__
+IIIITTTZZ_
+</mino-board>
+</div>
+<p>
+100% PC. Bad column parity. Has two main variants, depending on whether the knoll has both sides blocked (as above) or one side free (e.g. by shifting the O). The free variant itself comes in two forms: whether the O is next to the knoll, or next to the J.
+</p>
+
+<p>
+Normal builds: <span class='build-list'>JOTZ/LOTS (no hold), JOTS/LOTZ, IJTZ/ILTS (prefer different setup), IJTS/ILTZ (not 100%; prefer different setup)</span>.
+</p>
+
+<details>
+<summary>Solves</summary>
+<div class='solves' data-automirror='yes'>
+<mino-board>
+IOOTZZLLJJ
+IOOTTZZLJX
+IXXTXXXLJX
+IXXXXXXXXX
+</mino-board>
+<mino-board>
+IOOJJSSTTT
+IOOJSSZZTX
+IXXJXXXZZX
+IXXXXXXXXX
+</mino-board>
+<p>
+The two solves (save S and save L, respectively) are essentially the same between the free and blocked variants, but have slightly different dependencies. In the blocked variant (as pictured), the first solution can be used iff T isn't last among OTSZ; in the free variants, the first solution can be used iff T isn't last among ITSZ. For JOTZ/LOTS 2nd, by keeping the O piece in hold, it's possible to slightly increase save-S chances from 75% to 80% by choosing which variant to build based on the queue.
+</p>
+<p>
+Also note that in the blocked variant, it's possible to get a t-spin null or t-spin single with the first solution (the blockage is what provides the third corner for the t-spin 3-corner rule), which isn't the case for the free variants.
+</p>
+</div>
+</details>
+
+<p>
+Reference: <a href='https://knewjade.github.io/tetris-knowledge/2pcsystem/second_with_t.html#c'>knewjade's T-ari pattern C</a>.
+</p>
+</section>
+<section>
+<h3><a id='ito-plus-j'>ITO + J/L (100%)</a></h3>
+<div class='setup-display'>
+<mino-board class='generic-setup'>
+__________
+X_________
+XXX__X_XX_
+XXXXXXXXX_
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+J_________
+JJJ__T_OO_
+IIIITTTOO_
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+J_________
+JJJ__T__OO
+IIIITTT_OO
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+_________L
+_OO_T__LLL
+_OOTTTIIII
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+_________L
+OO__T__LLL
+OO_TTTIIII
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+_________J
+_OO_T__SSJ
+_OOTTTSSJJ
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+_________J
+OO__T__SSJ
+OO_TTTSSJJ
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+L_________
+LZZ__T_OO_
+LLZZTTTOO_
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+L_________
+LZZ__T__OO
+LLZZTTT_OO
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+_______J__
+__T__SSJJJ
+_TTTSSIIII
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+__L_______
+LLLZZ__T__
+IIIIZZTTT_
+</mino-board>
+</div>
+<p>
+100% PC. Bad column parity. As with the knoll + JO setup, this has two main variants, depending on whether the T is blocked on both sides or free on one side, with the free variant in turn having another equivalent shifted variant.
+</p>
+
+<p>
+Normal builds: <span class='build-list'>IJOT/ILOT (prefer different setup), JOTS/LOTZ (prefer different setup), IJTS/ILTZ (prefer different setup)</span>.
+</p>
+
+<details>
+<summary>Solves</summary>
+<div class='solves' data-automirror='yes'>
+<mino-board>
+ZZLLJJTOOI
+XZZLJTTOOI
+XXXLJXTXXI
+XXXXXXXXXI
+</mino-board>
+<mino-board>
+ZZTTTLLOOI
+XZZTSSLOOI
+XXXSSXLXXI
+XXXXXXXXXI
+</mino-board>
+<p>
+The two solves (save S and save J, respectively) are essentially the same between all variants, but have slightly different dependencies. In the blocked variant (as pictured), the first solution can be used iff T isn't last among JOTS; in the free variants, the first solution can be used iff T isn't last among IJTS.
+</p>
+<p>
+Also note that in the blocked variant, it's possible to get a t-spin null or t-spin single with the first solution (the blockage is what provides the third corner for the t-spin 3-corner rule), which isn't the case for the free variants.
+</p>
+</div>
+</details>
+
+<p>
+Reference: <a href='https://knewjade.github.io/tetris-knowledge/2pcsystem/second_with_t.html#tiol-100'>knewjade's T-ari TIOL 100%</a>.
+</p>
+</section>
+<section>
+<h3><a id='setup-id'>Knoll + top hat (98.57%)</a></h3>
+<div class='setup-display'>
+<mino-board class='generic-setup'>
+__________
+__XX______
+__XX__XXX_
+_XXXXXXXXX
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+__OO______
+__OO__SST_
+_IIIISSTTT
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+______OO__
+_SST__OO__
+SSTTTIIII_
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+______OO__
+_TZZ__OO__
+TTTZZIIII_
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+__OO______
+__OO__TZZ_
+_IIIITTTZZ
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+__JL______
+__JL__SST_
+_JJLLSSTTT
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+______JL__
+_SST__JL__
+SSTTTJJLL_
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+______JL__
+_TZZ__JL__
+TTTZZJJLL_
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+__JL______
+__JL__TZZ_
+_JJLLTTTZZ
+</mino-board>
+</div>
+<p>
+98.57% PC; 100% PC with S &lt; T or S &lt; O.
+</p>
+
+<p>
+Normal builds: <span class='build-list'>IOTS/IOTZ (second build not 100%), JLTS/JLTZ (prefer different setup)</span>.
+</p>
+
+<p>For JLTS/JLTZ, there's a symmetrical variant of the setup that can accommodate both early S and early Z, and can be modified into a 100% 3-piece setup that has two solutions and tetris/TSD chances.</p>
+
+<details>
+<summary>Solves</summary>
+<div class='solves' data-automirror='yes'>
+<mino-board>
+IJJTTTZZLL
+IJXXTSSZZL
+IJXXSSXXXL
+IXXXXXXXXX
+</mino-board>
+<mino-board>
+IJJZZSSTLL
+IJXXSSTTTL
+IJXXZZXXXL
+IXXXXXXXXX
+</mino-board>
+<mino-board>
+LLLTTTIIII
+OOXXTSSJJJ
+OOXXSSXXXJ
+LXXXXXXXXX
+</mino-board>
+<mino-board>
+LLLZZTIIII
+OOXXTTTJJJ
+OOXXZZXXXJ
+LXXXXXXXXX
+</mino-board>
+<mino-board>
+LLLZZSSJJJ
+OOXXZZIIII
+OOXXSSXXXJ
+LXXXXXXXXX
+</mino-board>
+<mino-board>
+LLLIIIISST
+LZXXOOSSTT
+ZZXXOOXXXT
+ZXXXXXXXXX
+</mino-board>
+<p>
+The first two solutions save O and have 85.71% coverage. The other solves may be hard to recognise quickly.
+</p>
+</div>
+</details>
+
+<p>
+Reference: <a href='https://docs.google.com/document/d/17ABWvCDruGB1P92wPqp8NIPmqJJoEIS0Vfh4RSGms8w/edit#heading=h.zaar3eh4w303'>Marfung37's 2nd PC setups: TLJS, TISO</a>.
+</p>
+</section>
+<section>
+<h3><a id='the-itsz-setup'>The ITSZ setup (100%)</a></h3>
+<div class='setup-display'>
+<mino-board class='generic-setup'>
+__________
+__XX______
+__XXXXX___
+_XXXXXXXXX
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+__ZZ______
+__TZZSS___
+_TTTSSIIII
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+______SS__
+___ZZSST__
+IIIIZZTTT_
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+__JT______
+__JTTSS___
+_JJTSSIIII
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+______TL__
+___ZZTTL__
+IIIIZZTLL_
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+__JL______
+__JLTTT___
+_JJLLTIIII
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+______JL__
+___TTTJL__
+IIIITJJLL_
+</mino-board>
+<mino-board class='specific-setup dupe'>
+__________
+__OO______
+__OOTTT___
+_IIIITIIII
+</mino-board>
+<mino-board class='specific-setup dupe'>
+__________
+______OO__
+___TTTOO__
+IIIITIIII_
+</mino-board>
+</div>
+<p>
+100% PC.
+</p>
+
+<p>
+Normal builds: <span class='build-list'>ITSZ (at least one build no hold), IJTS/ILTZ (no hold; prefer different setup), IJLT (prefer different setup)</span>.<br>
+Dupe builds: <span class='build-list'>IIOT (no hold)</span>.
+</p>
+
+<p>For IJLT, see its own section for how the setup can be modified further for higher score.</p>
+
+<details>
+<summary>Solves</summary>
+<div class='solves' data-automirror='yes'>
+<mino-board>
+IJJZZTTTSS
+IJXXZZTSSL
+IJXXXXXLLL
+IXXXXXXXXX
+</mino-board>
+<mino-board>
+IJJZZTTTLL
+IJXXZZTOOL
+IJXXXXXOOL
+IXXXXXXXXX
+</mino-board>
+<p>
+The two solves above cover every queue: if L &lt; O, the first solve always works, while if O &lt; L, the second solve always works. The below is an additional tetris solve. These three solves always save O, S or Z.
+</p>
+<mino-board>
+IJJTTTSSLL
+IJXXTSSOOL
+IJXXXXXOOL
+IXXXXXXXXX
+</mino-board>
+</div>
+</details>
+
+<p>
+Reference: <a href='https://knewjade.github.io/tetris-knowledge/2pcsystem/second_with_t.html#itsz'>knewjade's T-ari ITSZ</a>.
+</p>
+</section>
+<section>
+<h3><a id='jaws-precursor-plus-t'>Jaws precursor + T (99.84% to 100%)</a></h3>
+<div class='setup-display'>
+<mino-board class='generic-setup'>
+__________
+___X______
+XXXXXXX___
+XXXXXXXX__
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+___Z______
+OOZZSST___
+OOZSSTTT__
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+______S___
+___TZZSSOO
+__TTTZZSOO
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+___T______
+OOTTTZZ___
+OOIIIIZZ__
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+______T___
+___SSTTTOO
+__SSIIIIOO
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+___L______
+JLLLSST___
+JJJSSTTT__
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+______J___
+___SSTJJJL
+__SSTTTLLL
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+______J___
+___TZZJJJL
+__TTTZZLLL
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+___L______
+JLLLTZZ___
+JJJTTTZZ__
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+___J______
+LLLJJJT___
+LIIIITTT__
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+______L___
+___TLLLJJJ
+__TTTIIIIJ
+</mino-board>
+</div>
+<p>
+99.84% PC. 100% PC if J is within the first three, or neither of JL is within the first three.
+</p>
+
+<p>
+Normal builds: <span class='build-list'>OTSZ, IOTS/IOTZ, JLTS/JLTZ (second build not 100%; prefer different setup), IJLT (two builds needed; prefer different setup)</span>.<br>
+Dupe builds: quite a number (not included here).
+</p>
+
+<p>For OTSZ, the setup can be built in two ways. If you choose which way to build based on whether J or L is seen within the first three pieces of the next bag, this is effectively 100%. While IJLT and JLTS/JLTZ also sometimes allow the setup to be built in two ways, there are some orders where only one way is possible (e.g. J&lt;S&lt;L&lt;T).</p>
+
+<details>
+<summary>Solves</summary>
+<div class='solves' data-automirror='yes'>
+<mino-board>
+JIIIISSTLL
+JJJXSSTTTL
+XXXXXXXZZL
+XXXXXXXXZZ
+</mino-board>
+<mino-board>
+OOLLLSSTTT
+OOLXSSZZTJ
+XXXXXXXZZJ
+XXXXXXXXJJ
+</mino-board>
+<mino-board>
+OOLLLTJJJI
+OOLXTTTSJI
+XXXXXXXSSI
+XXXXXXXXSI
+</mino-board>
+<mino-board>
+OOLLLTIIII
+OOLXTTTJJJ
+XXXXXXXZZJ
+XXXXXXXXZZ
+</mino-board>
+<mino-board>
+OOLLLSSJJJ
+OOLXSSIIII
+XXXXXXXZZJ
+XXXXXXXXZZ
+</mino-board>
+<mino-board>
+OOLLLTZZSS
+OOLXTTTZZJ
+XXXXXXXSSJ
+XXXXXXXXJJ
+</mino-board>
+<p>
+For the first solve (save O), as long as the L piece has not been placed yet, the Z piece can be spun in after the T piece (soft drop, clockwise, clockwise). Besides the first solve, the other five (save I, Z, S, T, I respectively) all have the same placements of the O and L pieces.
+</p>
+<p>
+The following solve has a potential TSD. The last two pieces must be IJ, T&lt;I or T&lt;J for the TSD; 4/42 = 9.52% chance.
+</p>
+<mino-board>
+OOLLLSSJJJ
+OOLXSSTTTZ
+XXXXXXXTZZ
+XXXXXXXXZJ
+</mino-board>
+</div>
+</details>
+
+<p>
+Reference: <a href='https://knewjade.github.io/tetris-knowledge/2pcsystem/second_with_t.html#otsz'>knewjade's T-ari OTSZ</a>.
+</p>
+</section>
+
+<section>
+<h3><a id='jaws-precursor-hold-t'>Jaws precursor, hold T (100%)</a></h3>
+<div class='setup-display'>
+<mino-board class='generic-setup'>
+__________
+___X______
+XXXXXX____
+XXXXX_____
+</mino-board>
+<mino-board class='specific-setup' data-hold='t'>
+__________
+___Z______
+OOZZSS____
+OOZSS_____
+</mino-board>
+<mino-board class='specific-setup' data-hold='t'>
+__________
+______S___
+____ZZSSOO
+_____ZZSOO
+</mino-board>
+<mino-board class='specific-setup' data-hold='t'>
+__________
+___L______
+JLLLSS____
+JJJSS_____
+</mino-board>
+<mino-board class='specific-setup' data-hold='t'>
+__________
+______J___
+____ZZJJJL
+_____ZZLLL
+</mino-board>
+<mino-board class='specific-setup' data-hold='t'>
+__________
+___J______
+LLLJJJ____
+LIIII_____
+</mino-board>
+<mino-board class='specific-setup' data-hold='t'>
+__________
+______L___
+____LLLJJJ
+_____IIIIJ
+</mino-board>
+</div>
+<p>
+100% PC.
+</p>
+
+<p>
+Normal builds: <span class='build-list'>OTSZ, JLTS/JLTZ (not 100%; prefer different setup), IJLT (two builds; not 100%; prefer different setup)</span>.
+</p>
+
+<p>
+Freestyle-solving the 3-piece setup is not substantially different from the 4-piece setup, since most solutions place the first T piece in the same place anyway. However, it's always possible to save O/S/Z with the 3-piece setup, which is not true of the 4-piece setup ("only" 99.21%).
+</p>
+
+<p>
+This is probably not practical.
+</p>
+
+<details>
+<summary>Solves</summary>
+<div class='solves' data-automirror='yes'>
+<mino-board>
+JIIIISSTLL
+JJJXSSTTTL
+XXXXXXTZZL
+XXXXXTTTZZ
+</mino-board>
+<mino-board>
+OOLLLTJJJI
+OOLXTTTSJI
+XXXXXXTSSI
+XXXXXTTTSI
+</mino-board>
+<mino-board>
+OOLLLTTTTI
+OOLXTTTTJI
+XXXXXXSSJI
+XXXXXSSJJI
+</mino-board>
+<mino-board>
+OOLLLTIIII
+OOLXTTTJJJ
+XXXXXXTZZJ
+XXXXXTTTZZ
+</mino-board>
+<mino-board>
+JIIIISSTTT
+JJJXSSZZLL
+XXXXXXTZZL
+XXXXXTTTTL
+</mino-board>
+<mino-board>
+OOLLLSSJJJ
+OOLXSSIIII
+XXXXXXTTTT
+XXXXXTTTTJ
+</mino-board>
+<p>
+This is a minimal covering set of save-O/S/Z solutions. All of these solutions use two T pieces, and you have to keep in mind that for some of the solutions, you may be forced to place the first T in different locations depending on the rest of the queue.
+</p>
+<!--
+fumen of the solves
+https://fumen.zui.jp/?v115@9gg0zhR4wwhli0A8R4ywglF8wwBtglE8ywBtJeAgH9?gRpilwwi0whRpglA8ywQ4g0whF8wwR4whE8ywQ4whJeAAA9?gRpilzwwhRpglA8zwg0whF8R4g0whE8R4h0whJeAAA9gRpi?lwwzhRpglA8ywi0F8wwBtg0E8ywBtJeAAA9gg0zhR4ywi0A?8R4BthlF8wwBtglE8zwglJeAAA9gRpilR4i0RpglA8R4zhF?8zwE8zwg0JeAAA
+-->
+</div>
+</details>
+
+<p>
+Reference: <a href='https://knewjade.github.io/tetris-knowledge/2pcsystem/second_with_t.html#otsz'>knewjade's T-ari OTSZ</a>.
+</p>
+</section>
+
+<section>
+<h3><a id='pco-plus-heart'>PCO + heart (100%)</a></h3>
+<div class='setup-display'>
+<mino-board class='generic-setup'>
+_________X
+XX______XX
+XXX____XXX
+XXX_____XX
+</mino-board>
+<mino-board class='specific-setup'>
+_________I
+ZZ______TI
+JZZ____TTI
+JJJ_____TI
+</mino-board>
+<mino-board class='specific-setup'>
+I_________
+IT______ZJ
+ITT____ZZJ
+IT_____ZJJ
+</mino-board>
+<mino-board class='specific-setup'>
+I_________
+IT______SS
+ITT____SSL
+IT_____LLL
+</mino-board>
+<mino-board class='specific-setup'>
+_________I
+LS______TI
+LSS____TTI
+LLS_____TI
+</mino-board>
+<mino-board class='specific-setup'>
+_________T
+OO______TT
+OOL____ZZT
+LLL_____ZZ
+</mino-board>
+<mino-board class='specific-setup'>
+T_________
+TT______OO
+TSS____JOO
+SS_____JJJ
+</mino-board>
+<mino-board class='specific-setup'>
+_________T
+JJ______TT
+JOO____ZZT
+JOO_____ZZ
+</mino-board>
+<mino-board class='specific-setup'>
+T_________
+TT______LL
+TSS____OOL
+SS_____OOL
+</mino-board>
+<mino-board class='specific-setup'>
+_________I
+JJ______TI
+JOO____TTI
+JOO_____TI
+</mino-board>
+<mino-board class='specific-setup'>
+I_________
+IT______OO
+ITT____JOO
+IT_____JJJ
+</mino-board>
+<mino-board class='specific-setup'>
+I_________
+IT______LL
+ITT____OOL
+IT_____OOL
+</mino-board>
+<mino-board class='specific-setup'>
+_________I
+OO______TI
+OOL____TTI
+LLL_____TI
+</mino-board>
+<mino-board class='specific-setup'>
+T_________
+TT______ZJ
+TSS____ZZJ
+SS_____ZJJ
+</mino-board>
+<mino-board class='specific-setup'>
+_________T
+LS______TT
+LSS____ZZT
+LLS_____ZZ
+</mino-board>
+<mino-board class='specific-setup'>
+_________J
+T______SSJ
+TT____SSJJ
+T_____IIII
+</mino-board>
+<mino-board class='specific-setup'>
+L_________
+LZZ______T
+LLZZ____TT
+IIII_____T
+</mino-board>
+</div>
+<p>
+100% PC.
+</p>
+
+<p>
+Normal builds: <span class='build-list'>JOTZ/LOTS, IJOT/ILOT (first build no hold), IJTZ/ILTS (prefer different setup), JOTS/LOTZ (not 100%), JTSZ/LTSZ (not 100%; prefer different setup), IJTS/ILTZ (not 100%; prefer different setup)</span>.<br>
+Dupe builds: quite a number (not included here).
+</p>
+
+<details>
+<summary>Solves</summary>
+<div class='solves' data-automirror='yes'>
+<mino-board>
+IIIILJJSSX
+XXLLLJSSXX
+XXXOOJTXXX
+XXXOOTTTXX
+</mino-board>
+<mino-board>
+IIIILJJSSX
+XXLLLJSSXX
+XXXOOZZXXX
+XXXOOJZZXX
+</mino-board>
+<mino-board>
+IIIILSTTTX
+XXLLLSSTXX
+XXXOOJSXXX
+XXXOOJJJXX
+</mino-board>
+<mino-board>
+JJJITTTSSX
+XXJILTSSXX
+XXXILZZXXX
+XXXILLZZXX
+</mino-board>
+<mino-board>
+JJJILLLSSX
+XXJILZSSXX
+XXXIZZTXXX
+XXXIZTTTXX
+</mino-board>
+<mino-board>
+JJJOOSTTTX
+XXJOOSSTXX
+XXXLLLSXXX
+XXXLIIIIXX
+</mino-board>
+<mino-board>
+JJJLLLTTTX
+XXJLZOOTXX
+XXXZZOOXXX
+XXXZIIIIXX
+</mino-board>
+<mino-board>
+JJJIIIISSX
+XXJOOTTTXX
+XXXOOLTXXX
+XXXLLLSSXX
+</mino-board>
+<mino-board>
+JJJLLLTTTX
+XXJSIIIIXX
+XXXSSOOXXX
+XXXLSOOTXX
+</mino-board>
+<p>
+These nine solutions cover every queue and always save O, S, Z or T. The first five solves are closely related to PCO 1st PC solves and should be easy to recognise even without deliberate practice, but the others may seem somewhat unusual.
+</p>
+</div>
+</details>
+<p>
+Reference: <a href='https://harddrop.com/wiki/PC_Opener_Continuations#T_piece_placed_.28either_L_piece_or_J_piece.29'>Hard Drop wiki's PCO continuations</a>, <a href='https://docs.google.com/document/d/17ABWvCDruGB1P92wPqp8NIPmqJJoEIS0Vfh4RSGms8w/edit'>Marfung's 2nd PC setups: TILO, TLZO</a>.
+</p>
+</section>
+</section><!-- One T -->
+<section>
+<h2><a id='no-t-even-jl-setups'>No T, even JL</a></h2>
+<section>
+<h3><a id='horizontal-box-plus-o'>Horizontal box + O (99.48%)</a></h3>
+<div class='setup-display'>
+<mino-board class='generic-setup'>
+__________
+XXXX______
+XXXXXX____
+XXXXXX____
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+______JJSS
+____OOJSSL
+____OOJLLL
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+______JJSS
+OO____JSSL
+OO____JLLL
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+ZZLL______
+JZZLOO____
+JJJLOO____
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+ZZLL______
+JZZL____OO
+JJJL____OO
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+LOOJ______
+LOOJJJ____
+LLIIII____
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+______LOOJ
+____LLLOOJ
+____IIIIJJ
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+LLLJ______
+LSSJJJ____
+SSIIII____
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+______LJJJ
+____LLLZZJ
+____IIIIZZ
+</mino-board>
+<mino-board class='specific-setup dupe'>
+__________
+JJLL______
+JOOLOO____
+JOOLOO____
+</mino-board>
+<mino-board class='specific-setup dupe'>
+__________
+TTTT______
+JTTTTL____
+JJJLLL____
+</mino-board>
+<mino-board class='specific-setup dupe'>
+__________
+______TTTT
+____JTTTTL
+____JJJLLL
+</mino-board>
+</div>
+<p>
+99.48% PC. 100% PC if T or O is within the first three pieces. The 4×3 box, O piece, and 4×4 blank space can be permuted, as long as the O is next to the blank space. (If the O is instead touching the wall, PC rate drops to 95.00%.)
+</p>
+
+<p>
+Normal builds: <span class='build-list'>JLOS/JLOZ, IJLO (two builds needed; prefer different setup), IJLS/IJLZ (not 100%)</span>.<br>
+Dupe builds: <span class='build-list'>JLOO (no hold), JLTT (two builds; not 100%)</span>.
+</p>
+
+<p>
+For IJLO, it's always possible to build a 100% PC 3-piece setup by omitting the later of the JL pieces. However, there isn't much reason to use this 3-piece setup because there's a simpler save-O/S/Z 4-piece setup.
+</p>
+
+<details>
+<summary>Solves</summary>
+<div class='solves' data-automirror='yes'>
+<mino-board>
+IIIIOOJJLL
+XXXXOOJZZL
+XXXXXXJTZZ
+XXXXXXTTTL
+</mino-board>
+<mino-board>
+IIIIOOTTTZ
+XXXXOOLTZZ
+XXXXXXLJJJ
+XXXXXXLLZJ
+</mino-board>
+<mino-board>
+IIIIOOTTTZ
+XXXXOOJJZZ
+XXXXXXJTZL
+XXXXXXJLLL
+</mino-board>
+<mino-board>
+IIIIOOSZZT
+XXXXOOSSTT
+XXXXXXLLLT
+XXXXXXLSZZ
+</mino-board>
+<p>
+Not a covering set, just a few solves to give the flavour of what solves look like. The majority of the solves use I and O to complete a 6×4 box, with four of the JLTSZ pieces used to form a 4×4 skim box, similar to Grace System 1st PC solves. Keep in mind that third-row skims require the O to already be placed, while second-row skims will work immediately. 180° spins may be useful (e.g. in the second solve).
+</p>
+<p>
+The two following solutions save O and thus cannot use the O piece to complete a 6×4 box. The first one (build jaws on the other side) has a potential TSS.
+</p>
+<mino-board>
+IIIILLLJJJ
+XXXXLTTTSJ
+XXXXXXZZSS
+XXXXXXTZZS
+</mino-board>
+<mino-board>
+IIIILLLSSZ
+XXXXLTTTZZ
+XXXXXXTJJJ
+XXXXXXSSZJ
+</mino-board>
+</div>
+</details>
+<p>
+Reference: <a href='https://knewjade.github.io/tetris-knowledge/2pcsystem/second_without_t.html#a'>knewjade's T-nashi pattern A'</a>.
+</p>
+</section>
+
+<section>
+<h3><a id='setup-id'>Vertical box + O (99.96% to 100%)</a></h3>
+<div class='setup-display'>
+<mino-board class='generic-setup'>
+XXX_______
+XXX_______
+XXXXX_____
+XXXXX_____
+</mino-board>
+<mino-board class='specific-setup'>
+_______JJJ
+_______LSJ
+OO_____LSS
+OO_____LLS
+</mino-board>
+<mino-board class='specific-setup'>
+_______JJJ
+_______LSJ
+_____OOLSS
+_____OOLLS
+</mino-board>
+<mino-board class='specific-setup'>
+LLL_______
+LZJ_______
+ZZJ_____OO
+ZJJ_____OO
+</mino-board>
+<mino-board class='specific-setup'>
+LLL_______
+LZJ_______
+ZZJOO_____
+ZJJOO_____
+</mino-board>
+<mino-board class='specific-setup'>
+LLL_______
+LSS_______
+SSJJJ_____
+IIIIJ_____
+</mino-board>
+<mino-board class='specific-setup'>
+_______JJJ
+_______LSJ
+_____LLLSS
+_____IIIIS
+</mino-board>
+<mino-board class='specific-setup'>
+_______JJJ
+_______ZZJ
+_____LLLZZ
+_____LIIII
+</mino-board>
+<mino-board class='specific-setup'>
+LLL_______
+LZJ_______
+ZZJJJ_____
+ZIIII_____
+</mino-board>
+<mino-board class='specific-setup'>
+LOO_______
+LOO_______
+LLJJJ_____
+IIIIJ_____
+</mino-board>
+<mino-board class='specific-setup'>
+_______OOJ
+_______OOJ
+_____LLLJJ
+_____LIIII
+</mino-board>
+</div>
+<p>
+99.96% PC. The only two fail queues are [LS]!TZOI (if O is on the left), or [JZ]!TSOI (if O is on the right).
+</p>
+
+<p>
+Normal builds: <span class='build-list'>JLOS/JLOZ (second build may need 180° spin), IJLO (not 100%; prefer different setup), IJLS/IJLZ (two builds; not 100%)</span>.<br>
+Dupe builds: <span class='build-list'>IJJO/ILLO (no hold), JJOZ/LLOS, JJOS/LLOZ (not 100%), IJJZ/ILLS (not 100%), IJTT/ILTT, JOTT/LOTT (no hold)</span>.
+</p>
+
+<p>
+While this setup can be built in two ways for some piece combinations, the solves are not substantially simplified based on side. For JLOS/JLOZ in particular, both ways are always buildable, and the fail queues can always be avoided by choosing based on the first two pieces of the next bag: if the first two pieces are JZ, place O on the left, and otherwise place O on the right. This makes the setup effectively 100% PC.
+</p>
+
+<details>
+<summary>Solves</summary>
+<div class='solves' data-automirror='yes'>
+<p>
+According to rotf.lol, the minimal covering set has 18 solutions. (Not included here.) Most common solutions place an I piece vertically, producing the same field as the horizontal box + O setup; the 4×4 box solutions there can be used here as well. The following is an additional solution that doesn't use vertical I.
+</p>
+<mino-board>
+XXXJIIIILL
+XXXJJJZSSL
+XXXXXZZTTT
+XXXXXZSSTL
+</mino-board>
+<p>
+Has a fair number of TSS solutions and one TSD solution. Below is the one TSD solve.
+</p>
+<mino-board>
+XXXJIIIILL
+XXXJJJTTTL
+XXXXXOOZZL
+XXXXXOOTZZ
+</mino-board>
+</div>
+</details>
+
+<p>
+Reference: <a href='https://docs.google.com/document/d/17ABWvCDruGB1P92wPqp8NIPmqJJoEIS0Vfh4RSGms8w/edit#heading=h.s0h99geaijx5'>Marfung37's 2nd PC setups: LJSO</a>.
+</p>
+</section>
+
+<section>
+<h3><a id='4x4-box'>4×4 box (100%)</a></h3>
+<div class='setup-display'>
+<mino-board class='generic-setup'>
+XXXX______
+XXXX______
+XXXX______
+XXXX______
+</mino-board>
+<mino-board class='specific-setup'>
+ILLL______
+ILOO______
+IJOO______
+IJJJ______
+</mino-board>
+<mino-board class='specific-setup'>
+______JJJI
+______OOJI
+______OOLI
+______LLLI
+</mino-board>
+<mino-board class='specific-setup'>
+______JJJI
+______LSJI
+______LSSI
+______LLSI
+</mino-board>
+<mino-board class='specific-setup'>
+ILLL______
+ILZJ______
+IZZJ______
+IZJJ______
+</mino-board>
+</div>
+<p>
+100% PC.
+</p>
+
+<p>
+Normal builds: <span class='build-list'>IJLO (at least one build no hold; prefer different setup), IJLS/IJLZ</span>.<br>
+Dupe builds: quite a number (not included here).
+</p>
+
+<p>Not all ways to build the boxes are shown here. By using other builds, it may be possible to reduce the number of holds needed, reduce the number of soft drops needed, and/or avoid relying on gravity.</p>
+
+<details>
+<summary>Solves</summary>
+<div class='solves' data-automirror='yes'>
+<p>
+Large covering set; not reproduced here. These are some sample solutions. These two Grace System solutions are the most common and save T.
+</p>
+<mino-board>
+XXXXLLLJJJ
+XXXXLZOOSJ
+XXXXZZOOSS
+XXXXZIIIIS
+</mino-board>
+<mino-board>
+XXXXSIIIIZ
+XXXXSSOOZZ
+XXXXJSOOZL
+XXXXJJJLLL
+</mino-board>
+<p>
+The next four solutions cover queues starting with JSZ. Most of the time, building jaws works; the fail queues for jaws are [LT]!OI, which are covered by the fourth solution below. (Incidentally, the fourth solution also has a TETR.IO-exclusive 180° TSS solve.) The first solve, together with its mirror, also cover all queues starting with OSZ. These four solutions save I, O, T, O, respectively.
+</p>
+<mino-board>
+XXXXLLLJJJ
+XXXXLTTTSJ
+XXXXOOZZSS
+XXXXOOTZZS
+</mino-board>
+<mino-board>
+XXXXLLLJJJ
+XXXXIIIISJ
+XXXXLTZZSS
+XXXXTTTZZS
+</mino-board>
+<mino-board>
+XXXXIOOJJJ
+XXXXILLLSJ
+XXXXILZZSS
+XXXXIOOZZS
+</mino-board>
+<mino-board>
+XXXXIIIILL
+XXXXZZTTTL
+XXXXJZZTSS
+XXXXJJJSSL
+</mino-board>
+<p>
+The next solution, its mirror, and the first Grace System solution together cover all queues starting with ISZ. Grace covers O &lt; JL and JL &lt; O, while the solution below covers J &lt; O &lt; L and its mirror covers L &lt; O &lt; J. All save T.
+</p>
+<mino-board>
+XXXXLLLOOJ
+XXXXSZZOOJ
+XXXXSSZZJJ
+XXXXLSIIII
+</mino-board>
+<p>
+Sometimes you can build PCO with a horizontal T piece. These two solutions save I and S, respectively.
+</p>
+<mino-board>
+XXXXOOZZLL
+XXXXOOTZZL
+XXXXJTTTSS
+XXXXJJJSSL
+</mino-board>
+<mino-board>
+XXXXOOIIII
+XXXXOOTZZL
+XXXXJTTTZZ
+XXXXJJJLLL
+</mino-board>
+</div>
+</details>
+</section>
+
+<section>
+<h3><a id='broken-box'>Broken box (aka legs + hill) (100%)</a></h3>
+<div class='setup-display'>
+<mino-board class='generic-setup'>
+XX________
+XXX_______
+XXX______X
+XXXX___XXX
+</mino-board>
+<mino-board class='specific-setup'>
+JJ________
+JOO_______
+JOO______L
+IIII___LLL
+</mino-board>
+<mino-board class='specific-setup'>
+________LL
+_______OOL
+J______OOL
+JJJ___IIII
+</mino-board>
+<mino-board class='specific-setup'>
+S________I
+SS_______I
+JS______LI
+JJJ___LLLI
+</mino-board>
+<mino-board class='specific-setup'>
+I________Z
+I_______ZZ
+IJ______ZL
+IJJJ___LLL
+</mino-board>
+</div>
+<p>
+100% PC.
+</p>
+
+<p>
+Normal builds: <span class='build-list'>IJLS/IJLZ (prefer different setup), IJLO (two builds; not 100%; prefer different setup)</span>.<br>
+Dupe builds: quite a number (not included here).
+</p>
+
+<p>It's always possible to save O, S or Z with this setup, but the solves are quite non-obvious.</p>
+
+<details>
+<summary>Solves</summary>
+<div class='solves' data-automirror='yes'>
+<mino-board>
+XXLLSIIIIZ
+XXXLSSOOZZ
+XXXLJSOOZX
+XXXXJJJXXX
+</mino-board>
+<mino-board>
+XXJJJIIIIZ
+XXXSJLOOZZ
+XXXSSLOOZX
+XXXXSLLXXX
+</mino-board>
+<p>
+I haven't learnt any of the solves. I guess sometimes you can just do Grace System or freestyle something up.
+</p>
+</div>
+</details>
+<p>
+Reference: <a href='https://harddrop.com/wiki/PC_Opener_Continuations#Both_L_piece_and_J_piece_placed_.28no_T_piece.29'>Hard Drop wiki's PCO continuations</a>, <a href='https://docs.google.com/document/d/17ABWvCDruGB1P92wPqp8NIPmqJJoEIS0Vfh4RSGms8w/edit#heading=h.m44wbkc3c8qj'>Marfung37's 2nd PC setups: ILJS</a>
+</p>
+</section>
+
+<section>
+<h3><a id='shoe-plus-legs'>Shoe + legs (100% with 180)</a></h3>
+<div class='setup-display'>
+<mino-board class='generic-setup'>
+X_________
+XX________
+XXXX_____X
+XXXXX__XXX
+</mino-board>
+<mino-board class='specific-setup'>
+S_________
+SS________
+JSZZ_____L
+JJJZZ__LLL
+</mino-board>
+<mino-board class='specific-setup'>
+_________Z
+________ZZ
+J_____SSZL
+JJJ__SSLLL
+</mino-board>
+<mino-board class='specific-setup'>
+L_________
+L________J
+LL_____SSJ
+IIII__SSJJ
+</mino-board>
+<mino-board class='specific-setup'>
+_________J
+L________J
+LZZ_____JJ
+LLZZ__IIII
+</mino-board>
+</div>
+<p>
+99.96% PC; 100% PC with 180° spins.
+</p>
+
+<p>
+Normal builds: <span class='build-list'>JLSZ, IJLS/IJLZ (not 100%)</span>.<br>
+Dupe builds: quite a number (not included here).
+</p>
+
+<p>
+This setup is mainly for JLSZ, where both sides can be built. In general, if S or L is early, prefer shoe on left, and if Z or J is early, prefer shoe on right; if SZ and JL conflict on where the shoe goes, SZ takes precedence. The setup is 100% either way, so getting the "wrong" direction doesn't matter too much.
+</p>
+
+<details>
+<summary>Solves</summary>
+<div class='solves' data-automirror='yes'>
+<mino-board>
+XZZJJJILOO
+XXZZSJILOO
+XXXXSSILLX
+XXXXXSIXXX
+</mino-board>
+<mino-board>
+XZZLLJIIII
+XXZZLJJJSS
+XXXXLOOSSX
+XXXXXOOXXX
+</mino-board>
+<mino-board>
+XZZIIIILOO
+XXZZTTTLOO
+XXXXJJJLLX
+XXXXXTJXXX
+</mino-board>
+<mino-board>
+XZZIIIILLL
+XXZZTTTLSS
+XXXXJJJSSX
+XXXXXTJXXX
+</mino-board>
+<mino-board>
+XZZIIIILLL
+XXZZOOJLSS
+XXXXOOJSSX
+XXXXXJJXXX
+</mino-board>
+<mino-board>
+XZZIIIIJJJ
+XXZZSTTTLJ
+XXXXSSLLLX
+XXXXXSTXXX
+</mino-board>
+<p>
+Not a covering set, just some common/useful solutions in no particular order.
+</p>
+</div>
+</details>
+
+<p>
+Reference: <a href='https://harddrop.com/wiki/PC_Opener_Continuations#Both_L_piece_and_J_piece_placed_.28no_T_piece.29'>Hard Drop wiki's PCO continuations</a>, <a href='https://docs.google.com/document/d/17ABWvCDruGB1P92wPqp8NIPmqJJoEIS0Vfh4RSGms8w/edit#heading=h.9p4c24jmverf'>Marfung37's 2nd PC setups: LJSZ</a>
+</p>
+</section>
+
+<section>
+<h3><a id='setup-id'>Jaws precursor + vertical I (93.97% to 95.32%)</a></h3>
+<div class='setup-display'>
+<mino-board class='generic-setup'>
+_________X
+___X_____X
+XXXXXX___X
+XXXXX____X
+</mino-board>
+<mino-board class='specific-setup'>
+_________I
+___Z_____I
+OOZZSS___I
+OOZSS____I
+</mino-board>
+<mino-board class='specific-setup'>
+I_________
+I_____S___
+I___ZZSSOO
+I____ZZSOO
+</mino-board>
+<mino-board class='specific-setup'>
+_________I
+___L_____I
+JLLLSS___I
+JJJSS____I
+</mino-board>
+<mino-board class='specific-setup'>
+I_________
+I_____J___
+I___ZZJJJL
+I____ZZLLL
+</mino-board>
+<mino-board class='specific-setup dupe'>
+_________J
+_____S___J
+___ZZSSJJJ
+____ZZSJJJ
+</mino-board>
+<mino-board class='specific-setup dupe'>
+L_________
+L___Z_____
+LLLZZSS___
+LLLZSS____
+</mino-board>
+<mino-board class='specific-setup dupe'>
+_________I
+___J_____I
+OOJJJJ___I
+OOJJJ____I
+</mino-board>
+<mino-board class='specific-setup dupe'>
+I_________
+I_____L___
+I___LLLLOO
+I____LLLOO
+</mino-board>
+<mino-board class='specific-setup dupe'>
+_________I
+___J_____I
+LLLJJJ___I
+LIIII____I
+</mino-board>
+<mino-board class='specific-setup dupe'>
+I_________
+I_____L___
+I___LLLJJJ
+I____IIIIJ
+</mino-board>
+<mino-board class='specific-setup dupe'>
+_________J
+_____J___J
+___ZZJJJJJ
+____ZZIIII
+</mino-board>
+<mino-board class='specific-setup dupe'>
+L_________
+L___L_____
+LLLLLSS___
+IIIISS____
+</mino-board>
+</div>
+<p>
+93.97% PC.
+</p>
+
+<p>
+Normal builds: <span class='build-list'>IOSZ (no hold), IJLS/IJLZ</span>.<br>
+Dupe builds: <span class='build-list'>IIJL (no hold), JJSZ/LLSZ (no hold), IJJO/ILLO (no hold), IJJZ/ILLS (no hold)</span>.
+</p>
+
+<p>
+Solutions are slightly biased towards having an early J piece, which can often be used to skim the second row. 702/720 = 97.50% PC if see both JL, 1378/1440 = 95.69% PC if see J only, 1310/1440 = 90.97% PC if see L only, 1346/1440 = 93.47% PC if see neither. For IOSZ in particular, this setup can always be built in two ways, so by choosing to mirror when you see L but not J in the previews, the PC rate increases to 4804/5040 = 95.32%.
+</p>
+
+<details>
+<summary>Solves</summary>
+<div class='solves' data-automirror='yes'>
+<mino-board>
+JIIIISSLLX
+JJJXSSZZLX
+XXXXXXTZZX
+XXXXXTTTLX
+</mino-board>
+<mino-board>
+OOLLLJJJIX
+OOLXZZSJIX
+XXXXXXSSIX
+XXXXXZZSIX
+</mino-board>
+<mino-board>
+OOLLLIIIIX
+OOLXZZTTTX
+XXXXXXJJJX
+XXXXXZZTJX
+</mino-board>
+<mino-board>
+OOLLLIIIIX
+OOLXZZJJJX
+XXXXXXTTTX
+XXXXXZZTJX
+</mino-board>
+<mino-board>
+OOLLLJJJIX
+OOLXTTTZIX
+XXXXXXZZIX
+XXXXXTZJIX
+</mino-board>
+<mino-board>
+OOLLLSSZJX
+OOLXSSZZJX
+XXXXXXZJJX
+XXXXXIIIIX
+</mino-board>
+<p>
+The first solve is the only one that uses IJ to complete the jaws shape. Every other solution (minimal or not) must use OL to complete it. The saves are O, T, S, S, S, T, respectively.
+</p>
+<p>
+The two following solves have potential TSD. The saves are Z and S, respectively.
+</p>
+<mino-board>
+OOLLLIIIIX
+OOLXTTTSSX
+XXXXXXJJJX
+XXXXXTSSJX
+</mino-board>
+<mino-board>
+OOLLLIIIIX
+OOLXTTTZJX
+XXXXXXZZJX
+XXXXXTZJJX
+</mino-board>
+</div>
+<!--
+fumen of 93.97% covering set
+https://fumen.zui.jp/?v115@9gg0zhR4hlA8i0A8R4BtglG8wwBtF8ywglA8JeAgH9?gRpili0whA8RpglA8BtQ4g0whG8R4whF8BtQ4whA8JeAAA9?gRpilzhA8RpglA8BtywG8i0F8Btwwg0A8JeAAA9gRpilzhA?8RpglA8Bti0G8ywF8Btwwg0A8JeAAA9gRpili0whA8RpglA?8ywAtwhG8BtwhF8wwAtg0whA8JeAAA9gRpilR4Atg0A8Rpg?lA8R4Btg0G8Ath0F8zhA8JeAAA
+-->
+</details>
+
+<p>
+Reference: <a href='https://knewjade.github.io/tetris-knowledge/2pcsystem/second_without_t.html#id4'>knewjade's T-nashi pattern E', PC priority</a>, <a href='https://four.lol/perfect-clears/2nd#5-9397'>FOUR: 2nd PC Patterns, without-T Pattern 5</a>.
+</p>
+</section>
+
+</section><!-- No T, even JL -->
+<section>
+<h2><a id='no-t-one-jl-setups'>No T, one JL</a></h2>
+Every setup in this section has bad column parity, no exception. If the last piece in the next bag is T, you're forced to either save J/L or miss the PC.
+</section><!-- No T, one JL -->
+<!--
+<section>
+<h3><a id='setup-id'>Setup name</a></h3>
+<div class='setup-display'>
+<mino-board class='generic-setup'>
+__________
+__________
+__________
+__________
+</mino-board>
+<mino-board class='specific-setup'>
+__________
+__________
+__________
+__________
+</mino-board>
+</div>
+<p>
+xx.xx% PC.
+</p>
+
+<p>
+Normal builds: <span class='build-list'></span>.<br>
+Dupe builds: <span class='build-list'>OOOO</span>.
+</p>
+
+<details>
+<summary>Solves</summary>
+<div class='solves' data-automirror='yes'>
+<mino-board>
+IIIILTTTSS
+JJLLLXTSSX
+JOOOOXXXXX
+JOOOOXXXXX
+</mino-board>
+<p>
+blah blah blah
+</p>
+<mino-board>
+IIIILTTTSS
+JJLLLXTSSX
+JOOOOXXXXX
+JOOOOXXXXX
+</mino-board>
+</div>
+</details>
+</section>
+-->
+</main>
+<script>
+const ORDERING = 'IJLOTSZ';
+
+class Counter extends Map
+{
+	constructor(iter)
+	{
+		super();
+		for (let x of iter) {this.inc(x);}
+	}
+
+	get(key)
+	{
+		if (!this.has(key)) {return 0;}
+		return super.get(key);
+	}
+
+	inc(key)
+	{
+		return this.set(key, this.get(key)+1);
+	}
+}
+
+function load()
+{
+
+	// Make <a> elements link to themselves if they're not already linking to something else.
+	document.querySelectorAll('a[id]').forEach(el =>
+	{
+		if (el.href === '')
+		{
+			el.href = '#' + el.id;
+		}
+	});
+
+	// Kill whitespace text nodes in the setup display and solve lists.
+	document.querySelectorAll('.setup-display, .solves').forEach(el => {
+		let whitespace = [...el.childNodes].filter(x => (x.nodeType === 3 && x.textContent.trim() === ''));
+		for (let node of whitespace)
+		{
+			el.removeChild(node);
+		}
+	});
+
+	/*
+	For the common setups, make it so that we automatically show how to build the setup when
+	hovering over the piece composition.
+	*/
+	document.querySelectorAll('.setup-display .specific-setup').forEach(el =>
+	{
+		let piece_comp_map = new Counter([...el.dataset.field.toUpperCase()].filter(cell => ORDERING.includes(cell)));
+		for (let p of piece_comp_map.keys()) {piece_comp_map.set(p, piece_comp_map.get(p)/4);}
+		if (el.dataset.hold) {piece_comp_map.inc(el.dataset.hold.toUpperCase());}
+		let piece_comp = '';
+		for (let p of ORDERING)
+		{
+			piece_comp += p.repeat(piece_comp_map.get(p));
+		}
+		el.dataset.pieces = piece_comp;
+	});
+	document.querySelectorAll('.build-list').forEach(el =>
+	{
+		// XXX this assumes there are no HTML tags used inside the build list.
+		// not sure if there's a good way of fixing this without making the HTML
+		// part harder to edit/maintain.
+		let segments = el.textContent.split(/([IJLOTSZ]{4})/);
+		//console.log(segments);
+		for (let i = 1; i < segments.length; i += 2)
+		{
+			let pieces = segments[i];
+			let sorted = [...pieces].sort((x, y) => ORDERING.indexOf(x) - ORDERING.indexOf(y)).join('');
+			segments[i] = "<a class='piece-comp'>" + sorted + "</a>";
+		}
+		el.innerHTML = segments.join('');
+		el.querySelectorAll('a.piece-comp').forEach(ael => {
+			ael.href = '#';
+			ael.addEventListener('focus', piece_comp_focus);
+			ael.addEventListener('blur', piece_comp_blur);
+			ael.addEventListener('click', event => event.preventDefault());
+		});
+	});
+
+}
+
+function piece_comp_focus(event)
+{
+	let el = event.currentTarget;
+	let piece_comp = el.textContent;
+	let section_el = el;
+	while (section_el.tagName !== 'SECTION') {section_el = section_el.parentNode;}
+	let setups = section_el.querySelectorAll('.setup-display .specific-setup');
+	setups.forEach(setup => {
+		if (setup.dataset.pieces === piece_comp) {setup.style.display = 'inline';}
+		else {setup.style.display = 'none';}
+	});
+}
+
+function piece_comp_blur(event)
+{
+	let el = event.currentTarget;
+	let section_el = el;
+	while (section_el.tagName !== 'SECTION') {section_el = section_el.parentNode;}
+	let setups = section_el.querySelectorAll('.setup-display .specific-setup');
+	setups.forEach(setup => {setup.style.removeProperty('display');});
+}
+
+window.addEventListener('load', load);
+</script>
+</body>
+</html>
