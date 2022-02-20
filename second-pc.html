@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang='en'>
 <head>
 <meta charset='utf-8'>
@@ -120,7 +120,7 @@ Main resources:
 <ul>
 <li><a href='https://knewjade.github.io/tetris-knowledge/2pcsystem/index.html'>knewjade's setups</a> (Japanese)</li>
 <li><a href='https://four.lol/perfect-clears/2nd'>FOUR: 2nd PC Patterns</a> (this is largely a translated and reorganised version of knewjade's website)</li>
-<li><a href='https://docs.google.com/spreadsheets/d/1gW7h5DmNcD1smFkVQPXmoEzIwB41DegMc9V-GSmQvvQ/edit#gid=679066884'>rotf.lol 2nd PC</a> (<a href='https://rotf.lol/2ndpc'>backup URL</a>)</li>
+<li><a href='https://docs.google.com/spreadsheets/d/1gW7h5DmNcD1smFkVQPXmoEzIwB41DegMc9V-GSmQvvQ/edit#gid=679066884'>&#x1F36D; 2nd PC sheet</a> (<a href='https://rotf.lol/2ndpc'>backup URL</a>)</li>
 <li>Hard Drop Tetris Wiki: <a href='https://harddrop.com/wiki/Perfect_Clear_Opener#Following_Up'>setups</a>, <a href='https://harddrop.com/wiki/PC_Opener_Continuations'>solutions</a></li>
 <li><a href='https://docs.google.com/document/d/17ABWvCDruGB1P92wPqp8NIPmqJJoEIS0Vfh4RSGms8w/edit'>Marfung37's advanced 2nd PC setups</a></li>
 <li><a href='https://docs.google.com/document/d/1pgMeHopKipjdp5pmCiwcLk6vKXzdFWaHS8fokFqwWZ4/edit'>Queue-Based Perfect Clearing: 2nd PC</a></li>
@@ -582,7 +582,7 @@ Normal builds: <span class='build-list'>JOTS/LOTZ, JLOT (two builds; not 100%; p
 </p>
 
 <p>
-Main save-O solutions involve building an IJLOS/IJLOZ box. The only redeeming quality of this setup is its high save-O chance (89.29%)<!--TODO: verify this number-->; there is zero tetris or t-spin chance, and especially with late JL, the solves are sometimes hard to spot.
+Main save-O solutions involve building an IJLOS/IJLOZ box. The only redeeming quality of this setup is its high save-O chance (90.67%); there is zero tetris or t-spin chance, and especially when JL are both late, the solves are sometimes hard to spot.
 </p>
 
 <details>
@@ -639,6 +639,25 @@ As with the tub + vertical I setup, the last solve here requires a 180° spin, b
 <p>
 Reference: <a href='https://docs.google.com/document/d/17ABWvCDruGB1P92wPqp8NIPmqJJoEIS0Vfh4RSGms8w/edit#heading=h.4piun7eyz22o'>Marfung37's 2nd PC setups: TLZO</a>.
 </p>
+<!--
+optimal saves with 180
+
+DPC
+O       4570
+SZ      470
+I       0
+T       0
+JL      0
+none    0
+
+Pure PC
+T       0
+O       4570
+I       367
+JL      0
+SZ      103
+none    0
+-->
 </section>
 <section>
 <h3><a id='butter-tower-plus-t-hole'>Butter tower + T hole (97.14% to 99.56%)</a></h3>
@@ -1757,13 +1776,51 @@ XXXJTTTXXX
 XXXJJJSSXX
 </mino-board>
 <p>
-Another covering set (from rotf.lol) is the first seven solutions, plus these two. These two solutions save O.
+Another covering set (from &#x1F36D;'s sheet) is the first seven solutions, plus these two. These two solutions save O.
 </p>
 </div>
 </details>
 <p>
-Reference: <a href='https://harddrop.com/wiki/PC_Opener_Continuations#T_piece_placed_.28either_L_piece_or_J_piece.29'>Hard Drop wiki's PCO continuations</a>, <a href='https://docs.google.com/document/d/17ABWvCDruGB1P92wPqp8NIPmqJJoEIS0Vfh4RSGms8w/edit'>Marfung's 2nd PC setups: TILO, TLZO</a>, <a href='https://docs.google.com/spreadsheets/d/1gW7h5DmNcD1smFkVQPXmoEzIwB41DegMc9V-GSmQvvQ/edit#gid=821322104'>rotf.lol 2nd PC</a>.
+Reference: <a href='https://harddrop.com/wiki/PC_Opener_Continuations#T_piece_placed_.28either_L_piece_or_J_piece.29'>Hard Drop wiki's PCO continuations</a>, <a href='https://docs.google.com/document/d/17ABWvCDruGB1P92wPqp8NIPmqJJoEIS0Vfh4RSGms8w/edit'>Marfung's 2nd PC setups: TILO, TLZO</a>, <a href='https://docs.google.com/spreadsheets/d/1gW7h5DmNcD1smFkVQPXmoEzIwB41DegMc9V-GSmQvvQ/edit#gid=821322104'>&#x1F36D; 2nd PC</a>.
 </p>
+<!--
+optimal saves with 180:
+
+DPC
+O       4380
+SZ      596
+I       10
+T       54
+JL      0
+none    0
+
+Pure PC
+T       1572
+O       3156
+I       68
+JL      200
+SZ      44
+none    0
+
+optimal saves without 180:
+
+DPC
+O       4374
+SZ      594
+I       16
+T       56
+JL      0
+none    0
+
+Pure PC
+T       1572
+O       3150
+I       68
+JL      200
+SZ      50
+none    0
+
+-->
 </section>
 
 <section>
@@ -1901,6 +1958,124 @@ AND = 0.00 % [0/5040]
 -->
 </section>
 
+<section>
+<h3><a id='anti-pco-precursor-hold-i'>Anti-PCO precursor, hold I (100%)</a></h3>
+<div class='setup-display'>
+<mino-board class='generic-setup'>
+__________
+___X______
+XXXXX_____
+XXXXXX____
+</mino-board>
+<mino-board class='specific-setup' data-hold='i'>
+__________
+___L______
+JLLLT_____
+JJJTTT____
+</mino-board>
+<mino-board class='specific-setup' data-hold='i'>
+__________
+___Z______
+OOZZT_____
+OOZTTT____
+</mino-board>
+<mino-board class='specific-setup' data-hold='i'>
+__________
+______S___
+_____TSSOO
+____TTTSOO
+</mino-board>
+</div>
+<p>
+100% PC.
+</p>
+
+<p>
+Normal builds: <span class='build-list'>IOTS/IOTZ, IJLT (prefer different setup)</span>.<br>
+Dupe builds: <span class='build-list'>IIOT (no hold)</span>.
+</p>
+
+<p>
+This setup can always save O, S or Z. By placing the I piece horizontally to clear the bottom row, the PC rate remains as 100%, but some queues are now forced to save I instead.
+</p>
+
+<details>
+<summary>Solves</summary>
+<div class='solves' data-automirror='yes'>
+<p>
+<mino-board>
+__________
+___X______
+XXXXX_____
+XXXXXXIIII
+</mino-board>
+<p>
+Only the main solutions with I immediately placed on the floor are shown here. The first four solutions cover every queue, while the fifth solution has potential TSS/TSD. These save S, O, Z, I, Z, respectively.
+</p>
+<mino-board>
+JIIIITTTLL
+JJJXZZTOOL
+XXXXXZZOOL
+</mino-board>
+<mino-board>
+JIIIITTTSS
+JJJXZZTSSL
+XXXXXZZLLL
+</mino-board>
+<mino-board>
+JIIIISSLLL
+JJJXSSTLOO
+XXXXXTTTOO
+</mino-board>
+<mino-board>
+OOLLLSSJJJ
+OOLXSSTZZJ
+XXXXXTTTZZ
+</mino-board>
+<mino-board>
+OOLLLIIIIJ
+OOLXTTTSSJ
+XXXXXTSSJJ
+</mino-board>
+</div>
+</details>
+<!--
+optimal saves (4p)
+DPC
+O       3164
+SZ      1806
+I       70
+T       0
+JL      0
+none    0
+
+Pure PC
+T       0
+O       3164
+I       1076
+JL      0
+SZ      800
+none    0
+
+optimal saves (3p)
+DPC
+O       4118
+SZ      922
+I       0
+T       0
+JL      0
+none    0
+
+Pure PC
+T       3450
+O       1248
+I       302
+JL      40
+SZ      0
+none    0
+-->
+</section>
+
 </section><!-- One T -->
 
 <section>
@@ -1982,7 +2157,7 @@ ____JJJLLL
 </mino-board>
 </div>
 <p>
-99.48% PC. 100% PC if T or O is within the first three pieces. The 4×3 box, O piece, and 4×4 blank space can be permuted, as long as the O is next to the blank space. (If the O is instead touching the wall, PC rate drops to 95.00%.)
+99.48% PC; 99.88%/99.92% with 180° spins. 100% PC if T or O is within the first three pieces. The 4×3 box, O piece, and 4×4 blank space can be permuted, as long as the O is next to the blank space. (If the O is instead touching the wall, PC rate drops to 95.00%, or 96.59% with 180° spins.)
 </p>
 
 <p>
@@ -2044,6 +2219,92 @@ XXXXXXSSZJ
 <p>
 Reference: <a href='https://knewjade.github.io/tetris-knowledge/2pcsystem/second_without_t.html#a'>knewjade's without-T pattern A'</a>.
 </p>
+<!--
+optimal saves with 180, O touching box but not wall
+DPC
+O       1966
+SZ      2488
+I       0
+T       262
+JL      318
+none    6
+
+Pure PC
+T       2574
+O       1212
+I       0
+JL      1176
+SZ      72
+none    6
+
+optimal saves with 180, O touching wall but not box
+DPC
+O       2206
+SZ      2366
+I       0
+T       224
+JL      240
+none    4
+
+Pure PC
+T       2708
+O       1214
+I       0
+JL      1070
+SZ      44
+none    4
+
+optimal saves with 180, O blocked
+DPC
+O       0
+SZ      3704
+I       0
+T       178
+JL      986
+none    172
+
+Pure PC
+T       1598
+O       0
+I       0
+JL      2844
+SZ      426
+none    172
+
+optimal saves without 180, O not blocked
+DPC
+O       1966
+SZ      2474
+I       0
+T       228
+JL      346
+none    26
+
+Pure PC
+T       2388
+O       1328
+I       0
+JL      1232
+SZ      66
+none    26
+
+optimal saves without 180, O blocked
+O       0
+SZ      3584
+I       0
+T       0
+JL      1204
+none    252
+
+Pure PC
+T       1260
+O       0
+I       0
+JL      3024
+SZ      504
+none    252
+
+-->
 </section>
 
 <section>
@@ -2133,7 +2394,7 @@ While this setup can be built in two ways for some piece combinations, the solve
 <summary>Solves</summary>
 <div class='solves' data-automirror='yes'>
 <p>
-According to rotf.lol, the minimal covering set has 18 solutions. (Not included here.) Most common solutions place an I piece vertically, producing the same field as the horizontal box + O setup; the 4×4 box solutions there can be used here as well. The following is an additional solution that doesn't use vertical I.
+According to &#x1F36D; 2nd PC, the minimal covering set has 18 solutions. (Not included here.) Most common solutions place an I piece vertically, producing the same field as the horizontal box + O setup; the 4×4 box solutions there can be used here as well. The following is an additional solution that doesn't use vertical I.
 </p>
 <mino-board>
 XXXJIIIILL
@@ -2201,7 +2462,13 @@ Normal builds: <span class='build-list'>IJLO (two builds needed; prefer differen
 Dupe builds: quite a number (not included here).
 </p>
 
-<p>Not all ways to build the boxes are shown here. By using other builds, it may be possible to reduce the number of holds needed, reduce the number of soft drops needed, and/or avoid relying on gravity.</p>
+<p>
+Not all ways to build the boxes are shown here. By using other builds, it may be possible to reduce the number of holds needed, reduce the number of soft drops needed, and/or avoid relying on gravity.
+</p>
+
+<p>
+Theoretically 5024/5040 = 99.68% save-O/S/Z, with the remainder forced to save I or T, but in practice save-T solves may be easier to spot for parity reasons.
+</p>
 
 <details>
 <summary>Solves</summary>
@@ -2271,6 +2538,21 @@ XXXXOOIIII
 XXXXOOTZZL
 XXXXJTTTZZ
 XXXXJJJLLL
+</mino-board>
+<p>
+These save-O skim solves are probably useful. In the first one, the I piece can be spun in after JL are placed.
+</p>
+<mino-board>
+XXXXTTTZSS
+XXXXJJZZLL
+XXXXJTZSSL
+XXXXJIIIIL
+</mino-board>
+<mino-board>
+XXXXTTTZLL
+XXXXJJZZSS
+XXXXJTZSSL
+XXXXJIIIIL
 </mino-board>
 </div>
 </details>
@@ -2343,6 +2625,66 @@ I haven't learnt any of the solves. I guess sometimes you can just do Grace Syst
 </details>
 <p>
 Reference: <a href='https://harddrop.com/wiki/PC_Opener_Continuations#Both_L_piece_and_J_piece_placed_.28no_T_piece.29'>Hard Drop wiki's PCO continuations</a>, <a href='https://docs.google.com/document/d/17ABWvCDruGB1P92wPqp8NIPmqJJoEIS0Vfh4RSGms8w/edit#heading=h.m44wbkc3c8qj'>Marfung37's 2nd PC setups: ILJS</a>
+</p>
+</section>
+
+<section>
+<h3><a id='horizontal-box-hold-i'>Horizontal box, hold I (100%)</a></h3>
+<div class='setup-display'>
+<mino-board class='generic-setup'>
+__________
+XXXX______
+XXXX______
+XXXX______
+</mino-board>
+<mino-board class='specific-setup' data-hold='i'>
+__________
+JJLL______
+JOOL______
+JOOL______
+</mino-board>
+<mino-board class='specific-setup' data-hold='i'>
+__________
+LOOJ______
+LOOJ______
+LLJJ______
+</mino-board>
+<mino-board class='specific-setup' data-hold='i'>
+__________
+ZZLL______
+JZZL______
+JJJL______
+</mino-board>
+<mino-board class='specific-setup' data-hold='i'>
+__________
+______LJJJ
+______LZZJ
+______LLZZ
+</mino-board>
+<mino-board class='specific-setup' data-hold='i'>
+__________
+LLLJ______
+LSSJ______
+SSJJ______
+</mino-board>
+<mino-board class='specific-setup' data-hold='i'>
+__________
+______JJSS
+______JSSL
+______JLLL
+</mino-board>
+</div>
+<p>
+100% PC.
+</p>
+
+<p>
+Normal builds: <span class='build-list'>IJLS/IJLZ (two builds needed), IJLO (two builds needed; prefer different setup)</span>.<br>
+Dupe builds: quite a number (not included here).
+</p>
+
+<p>
+The solves are exactly the same as for the full 4×4 box, but here the I piece can be used in the 6×4 part early. Theoretically 100% save-O/S/Z, with 93.10% save-O.
 </p>
 </section>
 
@@ -2883,7 +3225,7 @@ _______SSJ
 ______SSOO
 ____IIIIOO
 </mino-board>
-<mino-board class='generic-setup'>
+<mino-board class='specific-setup'>
 LLL_______
 LZZ_______
 OOZZ______
@@ -2891,7 +3233,7 @@ OOIIII____
 </mino-board>
 </div>
 <p>
-98.29% PC.
+98.29% PC. 100% if T isn't last.
 </p>
 
 <p>
@@ -2939,7 +3281,7 @@ ___SSJ____
 __SSOO____
 IIIIOO____
 </mino-board>
-<mino-board class='generic-setup'>
+<mino-board class='specific-setup'>
 ____LLL___
 ____LZZ___
 ____OOZZ__
@@ -3433,8 +3775,42 @@ XXLLLXZZSJ
 XXXXXXXTSS
 XXXXXXTTTS
 </mino-board>
+<p>
+These two additional solutions have potential save-Z tetris. The second one requires the Z to remain held until the L piece comes.
+</p>
+<mino-board>
+OOJJJZZLLI
+OOSSJXZZLI
+XSSXXXXTLI
+XXXXXXTTTI
+</mino-board>
+<mino-board>
+OOJJJTTTZI
+OOSSJXTZZI
+XSSXXXXZLI
+XXXXXXLLLI
+</mino-board>
+<mino-board>
 </div>
 </details>
+<!--
+optimal saves (not affected by 180)
+DPC
+O       3432
+SZ      1534
+I       74
+T       0
+JL      0
+none    0
+
+Pure PC
+T       2440
+O       1856
+I       594
+JL      150
+SZ      0
+none    0
+-->
 </section>
 
 <section>
@@ -4577,6 +4953,110 @@ Reference: <a href='https://harddrop.com/wiki/PC_Opener_Continuations#T_piece_pl
 </section>
 
 <section>
+<h3><a id='ijls-specific'>IJLS / IJLZ</a></h3>
+<div class='first-pc-examples'>
+<p>Comes from 6p PCO.</p>
+<mino-board>
+ZZOOT
+XZZTT
+XXOOT
+XXXXX
+</mino-board>
+</div>
+<p>
+The basic setup to use is the <a href='#4x4-box'>4×4 box setup</a>, or the <a href='#horizontal-box-hold-i'>horizontal box setups</a> if you're feeling fancy, although the solves can get messy. Unfortunately, unlike IJLO, there's no easy parity-skim setup.
+</p>
+<p>
+With not-late S (S &lt; L or S &lt; J), this 3p variant of the <a href='#horizontal-box-plus-o'>horizontal box + O setup</a> works:
+</p>
+<mino-board>
+__________
+LLL_______
+LSS_______
+SSIIII____
+</mino-board>
+<details>
+<summary>Solves (not-late-S 3p)</summary>
+<div class='solves' data-automirror='yes'>
+<p>
+100% save O/S/Z. Most commonly, the solves complete the horizontal box + O setup.
+</p>
+<!--TODO: see if there's an easy condition to check for when to extend to horizontal box + O and when not to-->
+</div>
+</summary>
+</details>
+</section>
+
+<section>
+<h3><a id='ijos-specific'>IJOS / ILOZ</a></h3>
+<div class='first-pc-examples'>
+<p>Comes from PCO.</p>
+<mino-board>
+ZZLL
+XZZL
+XXTL
+XTTT
+</mino-board>
+<mino-board>
+TTTSS
+XIIII
+XXJJJ
+XTSSJ
+</mino-board>
+</div>
+<p>
+Main setups are either <a href='#hill-plus-o'>Hill + O</a> (97.90%) or <a href='#shoe-plus-o'>Shoe + O</a> (94.21%). If T is early in the next bag, go for the <a href='#eighty-percent'>80% setup</a>.
+</p>
+<p>
+If O is early (O &lt; S or O &lt; J), build a 3p variant of legs. (The 3-piece setup is buildable exactly when the 4-piece setup is, so it's not really any more complicated.) This setup has 100% PC rate, and if T isn't last, has 4318/4320 = 99.95% chance of saving O, S, Z or I. The only two queues where saving J/L is forced and T isn't last are [JT]!SIOLZ.
+</p>
+<mino-board>
+__________
+_______SS_
+______SSOO
+____IIIIOO
+</mino-board>
+<details>
+<summary>Solves (legs 3p)</summary>
+<div class='solves' data-automirror='yes'>
+<p>
+If neither T nor L is last, extend to legs and wing it from there.
+</p>
+<mino-board>
+_______JJJ
+_______SSJ
+______SSOO
+____IIIIOO
+</mino-board>
+<p>
+This is the unique solve for the forced-save-J/L queues. Never applicable if you preferentially use the 80% setup, since it requires an early T and that setup is 100% for early T.
+</p>
+<mino-board>
+JJSZZOOXXX
+JIIIIOOXXX
+JTSSZZXXXX
+TTTSXXXXXX
+</mino-board>
+<p>
+If T or L is last, place J on the floor. This solve covers exactly the queues where T or L is last.
+</p>
+<mino-board>
+__________
+_______SS_
+_J____SSOO
+_JJJIIIIOO
+</mino-board>
+<mino-board>
+ISTTTOOJJJ
+ISSZZOOXXJ
+IXSTZZXXXX
+IXXXXXXXXX
+</mino-board>
+</div>
+</details>
+</section>
+
+<section>
 <h3><a id='ttsz-specific'>TTSZ</a></h3>
 <div class='first-pc-examples'>
 <p>Comes from Jigsaw. (Can also come from Grace, but it's always possible to get ITSZ, JTSZ/LTSZ or OTSZ instead.)</p>
@@ -4847,6 +5327,30 @@ XJJLTSSX
 </details>
 <p>
 Reference: <a href='https://four.lol/perfect-clears/2nd#sttz-9881'>FOUR: 2nd PC Patterns, Other Patterns STTZ</a>, <a href='https://docs.google.com/spreadsheets/d/1OHON4x7E67MihAbpehntmOTQ4_6a2jh4PFHAP1f92ak/edit#gid=1759447643'>Ham's Duplicate T 100% 2nd method</a>.
+</p>
+</section>
+
+<section>
+<h3><a id='jjlz-specific'>JJLZ / JLLS</a></h3>
+<div class='first-pc-examples'>
+<p>Comes from Jigsaw (hold L).</p>
+<mino-board>
+TTTZZOO
+XIIIIOO
+XTXXZZX
+</mino-board>
+</div>
+<p>
+Hold whichever of JL isn't duplicated and build the following 3-piece setup. 100% PC.
+</p>
+<mino-board>
+__________
+_ZJ_______
+ZZJJ______
+ZJJJJJ____
+</mino-board>
+<p>
+This is congruent to the 3p legs setup for <a href='#ijos-specific'>ILOZ</a>; see the solves there.
 </p>
 </section>
 
