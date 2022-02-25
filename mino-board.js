@@ -202,7 +202,7 @@ class MinoBoard extends HTMLElement {
                         20 * run + (extendRight ? 2 : 0), 20 + 2, color));
                 } else {
                     svg.appendChild(rect(20 * col, 20 * (row + verticalPadding),
-                        20 * run + 2, 20 + 2, color));
+                        20 * run, 20 + 2, color));
                     svg.appendChild(rect(20 * (col + run) - 2, 20 * (row + verticalPadding),
                         4, 20, color));
                 }
