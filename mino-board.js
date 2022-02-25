@@ -69,34 +69,18 @@ class MinoBoard extends HTMLElement {
             return;
         }
 
-        this.field = [];
-
-        for (const line of field.split('\n')) {
-            if (MinoBoard.whitespace.test(line)) {
-                continue;
-            }
-
-            let row = '';
-
-            for (const mino of line.matchAll(MinoBoard.minoRegex)) {
-                row += mino[0];
-
-                if (row.length == 10) {
-                    this.field.push(row);
-                    row = '';
-                }
-            }
-
-            if (row.length % 10 != 0) {
-                row = row.padEnd(10, '_');
-                this.field.push(row);
+        this.field = field.trim().split('\n');
+        this.field.width = Math.max(...this.field.map(s => s.length));
+        for (let row = 0; row < this.field.length; row++) {
+            if (this.field[row].length !== this.field.width) {
+                this.field[row] = this.field[row].padEnd(this.field.width, '_');
             }
         }
 
         this.setAttribute('data-field', this.field.join('|'));
 
         const verticalPadding = 1;
-        const width = 200;
+        const width = 20 * this.field.width;
         const height = 20 * (this.field.length + verticalPadding);
 
         const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -105,15 +89,31 @@ class MinoBoard extends HTMLElement {
         svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
         this.appendChild(svg);
 
-        const getMino = (field, row, col) => field[row]?.charAt(col);
+        const getMino = (field, row, col) => field[row]?.[col];
 
         function* minos(field) {
             for (let row = 0; row < field.length; row++) {
-                for (let col = 0; col < 10; col++) {
+                for (let col = 0; col < field.width; col++) {
                     const mino = getMino(field, row, col);
 
                     if (mino != '_') {
                         yield [row, col, mino];
+                    }
+                }
+            }
+        }
+
+        function* minoRuns(field) {
+            for (let row = 0; row < field.length; row++) {
+                let col = 0;
+                while (col < field.width) {
+                    let mino = getMino(field, row, col);
+                    if (mino === '_') {col++; continue;}
+                    for (let i = col+1; i <= field.width; i++) {
+                        if (getMino(field, row, i) === mino) {continue;}
+                        yield [row, col, mino, i-col];
+                        col = i;
+                        break;
                     }
                 }
             }
@@ -129,41 +129,84 @@ class MinoBoard extends HTMLElement {
             return rect;
         }
 
-        function minoPoly(x, y, width, height, fill, extendRight, extendDown) {
-            const poly = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-            poly.setAttribute('fill', fill);
-            const coordinates = [
-                `${x},${y + height}`,
-                `${x},${y}`,
-                `${x + width},${y}`,
-            ];
-            if (extendRight) {coordinates.push(`${x + width * 1.5},${y + height * 0.5}`);}
-            coordinates.push(`${x+width},${y+height}`);
-            if (extendDown) {coordinates.push(`${x + width * 0.5},${y + height * 1.5}`);}
-            poly.setAttribute('points', coordinates.join(' '));
-            return poly;
-        }
-
         svg.appendChild(rect(0, 0, '100%', '100%', MinoBoard.colors['background']));
 
-        for (const [row, col, mino] of minos(this.field)) {
-            const color = MinoBoard.colors['top'][mino];
-            const extendRight = col === 9 || this.field[row][col+1] !== '_';
-            const extendDown = row === this.field.length - 1 || this.field[row+1][col] !== '_';
+        const fieldShadow = this.field.map((s, row) => {
+            let l = '';
+            for (let col = 0; col < this.field.width; col++) {
+                if (getMino(this.field, row, col) !== '_' && (
+                    getMino(this.field, row, col+1) === '_' ||
+                    getMino(this.field, row+1, col) === '_' ||
+                    getMino(this.field, row+1, col+1) === '_')) {
+                    l += 'X';
+                } else {
+                    l += '_';
+                }
+            }
+            return l;
+        });
+        fieldShadow.width = this.field.width;
 
-            svg.appendChild(minoPoly(20 * col + 5, 20 * (row + verticalPadding) + 7, 20, 20,
-                MinoBoard.colors['shadow'], extendRight, extendDown));
-
-            svg.appendChild(minoPoly(20 * col, 20 * (row + verticalPadding) - 4, 20, 4,
-                color, extendRight, extendDown));
+        for (const [row, col, mino, run] of minoRuns(fieldShadow)) {
+            svg.appendChild(rect(20 * col + 5, 20 * (row + verticalPadding) + 7, 20 * run, 20,
+                MinoBoard.colors['shadow']));
         }
 
-        for (const [row, col, mino] of minos(this.field)) {
+        const fieldTop = this.field.map((s, row) => {
+            let l = '';
+            for (let col = 0; col < this.field.width; col++) {
+                if (getMino(this.field, row, col) !== '_' &&
+                    (row === 0 || getMino(this.field, row-1, col) === '_')) {
+                    l += getMino(this.field, row, col);
+                } else {
+                    l += '_';
+                }
+            }
+            return l;
+        });
+        fieldTop.width = this.field.width;
+
+        for (const [row, col, mino, run] of minoRuns(fieldTop)) {
+            svg.appendChild(rect(20 * col, 20 * (row + verticalPadding) - 4, 20 * run, 4 + 2,
+            MinoBoard.colors['top'][mino]));
+        }
+
+        const fieldMain = this.field.map((s, row) => {
+            let l = [];
+            for (let col = 0; col < this.field.width; col++) {
+                let mino = getMino(this.field, row, col);
+                if (mino !== '_') {
+                    let extend = 'X';
+                    if (row === field.length-1 || getMino(this.field, row+1, col) === '_') {
+                        extend = '_';
+                    }
+                    l.push(mino + extend);
+                } else {
+                    l.push('_');
+                }
+            }
+            return l;
+        });
+        fieldMain.width = this.field.width;
+
+        for (const [row, col, [mino, extend], run] of minoRuns(fieldMain)) {
             const color = MinoBoard.colors['regular'][mino];
-            const extendRight = col === 9 || this.field[row][col+1] !== '_';
-            const extendDown = row === this.field.length - 1 || this.field[row+1][col] !== '_';
-            svg.appendChild(minoPoly(20 * col, 20 * (row + verticalPadding), 20, 20,
-                color, extendRight, extendDown));
+            const extendRight = (col+run !== this.field.width && getMino(this.field, row, col+run) !== '_');
+
+            if (extend === '_') {
+                svg.appendChild(rect(20 * col, 20 * (row + verticalPadding),
+                    20 * run + (extendRight ? 2 : 0), 20, color));
+            } else {
+                if (!extendRight || getMino(this.field, row+1, col+run) !== '_') {
+                    svg.appendChild(rect(20 * col, 20 * (row + verticalPadding),
+                        20 * run + (extendRight ? 2 : 0), 20 + 2, color));
+                } else {
+                    svg.appendChild(rect(20 * col, 20 * (row + verticalPadding),
+                        20 * run + 2, 20 + 2, color));
+                    svg.appendChild(rect(20 * (col + run) - 2, 20 * (row + verticalPadding),
+                        4, 20, color));
+                }
+            }
         }
     }
 
