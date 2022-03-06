@@ -102,6 +102,7 @@ summary
 	margin-right: 16px;
 }
 </style>
+<script>let __LOAD = performance.now();</script>
 </head>
 <body>
 <noscript><p>This page uses JavaScript to render diagrams.</p></noscript>
@@ -5465,6 +5466,7 @@ function load()
 		});
 	});
 
+	console.log(`load time: ${performance.now() - __LOAD}`);
 }
 
 function piece_comp_focus(event)
