@@ -4644,6 +4644,92 @@ Save Z. The ITO placement is mirrored compared to the early J setup. Guaranteed 
 </section>
 
 <section>
+<h3><a id='jlts-specific'>JLTS/JLTZ</a></h3>
+<div class='first-pc-examples'>
+<p>Comes from Jigsaw (horizontal T).</p>
+<mino-board>
+IIIIOO
+XXZZOO
+XXXZZX
+</mino-board>
+</div>
+<p>
+This can be thought of as being closely related to the IOTS/IOTZ cases, as JL and IO can both form the top hat shape. Like IOTS, there is a set of queue-based setups depending on which of JLTSZ is first among those five, but the easiest way of handling this is this 3-piece variation of the <a href='#knoll-plus-tophat'>knoll + top hat</a> setup. At the bare minimum, only two solutions are needed, saving O or Z.
+</p>
+<mino-board>
+__________
+L_________
+L__SST____
+LLSSTTT___
+</mino-board>
+<p>
+Keep in mind that although this orientation of the 3p shape can be formed with both LTS and LTZ, it's only 100% buildable for LTS and not for LTZ. You will have to use the mirror for JLTZ.
+</p>
+<details>
+<summary>Solves</summary>
+<div class='solves' data-automirror='yes'>
+<p>
+If S or Z is early (not OT &lt; SZ), extend to a shifted variant of the knoll + top hat shape, with the corresponding early-S/Z solves being applicable. These both save O.
+</p>
+<mino-board>
+__________
+X_______J_
+X__XXX__J_
+XXXXXXXJJ_
+</mino-board>
+<mino-board>
+TTTZZLLJJI
+XTSSZZLJXI
+XSSXXXLJXI
+XXXXXXXXXI
+</mino-board>
+<mino-board>
+LLJJSSTTTI
+XLJSSZZTXI
+XLJXXXZZXI
+XXXXXXXXXI
+</mino-board>
+<p>
+Otherwise, place J flat on the floor. This solution saves Z.
+</p>
+<mino-board>
+__________
+X_________
+X__XXX_J__
+XXXXXXXJJJ
+</mino-board>
+<mino-board>
+LLJJSSIIII
+XLJSSTTTOO
+XLJXXXTXOO
+XXXXXXXXXX
+</mino-board>
+<p>
+These additional t-spin and tetris solves are good to know. The first two potentially score a TSD, while the third one potentially scores a t-spin null followed by a tetris. These save O, O, Z, respectively. (If playing on TETR.IO, look out for 180° t-spins too.)
+</p>
+<mino-board>
+LLJJSSIIII
+XLJSSTTTZJ
+XLJXXXTZZJ
+XXXXXXXZJJ
+</mino-board>
+<mino-board>
+LLJJSSJJJI
+XLJSSTTTZI
+XLJXXXTZZI
+XXXXXXXZJI
+</mino-board>
+<mino-board>
+LLJJSSJJJI
+XLJSSTTTJI
+XLJXXXTOOI
+XXXXXXXOOI
+</mino-board>
+</div>
+</details>
+</section>
+
+<section>
 <h3><a id='itsz-specific'>ITSZ</a></h3>
 <div class='first-pc-examples'>
 <p>Comes from Grace, Jigsaw (horizontal T), IJLO box.</p>
@@ -5576,6 +5662,196 @@ IXXXXXXXXX
 </section>
 
 <section>
+<h3><a id='ijsz-specific'>IJSZ / ILSZ</a></h3>
+<div class='first-pc-examples'>
+<p>Comes from PCO, Grace, Jigsaw.</p>
+<mino-board>
+TTTL
+XLLL
+XXOO
+XTOO
+</mino-board>
+<mino-board>
+_____
+OOTTT
+OOLLL
+XXLTX
+</mino-board>
+</div>
+<p>
+This is a truly awful 2nd PC case. <em>None</em> of the known always-buildable 3-piece and 4-piece setups have high PC rate.
+</p>
+<p>
+The following two 3-piece setups (jaws hold I and shoe hold I) cover every order of IJSZ, and have PC rates of 97.18% and 96.11%, respectively. Probably not practical in fast runs unless you have good PC vision.
+</p>
+<mino-board>
+_______JJJ
+________SJ
+______ZZSS
+_______ZZS
+</mino-board>
+<mino-board>
+S_________
+SS________
+JSZZ______
+JJJZZ_____
+</mino-board>
+<p>
+<a href='#shoe-plus-o'>Shoe + O</a> (91.03% PC) can be built most of the time (22/24 = 91.67%); it only fails on SZJI and ZSJI. If you don't want to learn queue-based setups, this is the main option to go for. Use <a href='#shoe'>shoe</a> or <a href='#eighty-percent'>the 80% setup</a> as a fallback when this can't be built.
+</p>
+<mino-board>
+_______Z__
+______ZZ__
+____SSZJJJ
+___SSIIIIJ
+</mino-board>
+<details>
+<summary>Advanced/experimental setups and solves</summary>
+<div class='solves' data-automirror='yes'>
+<h4>See T</h4>
+<p>
+<a href='#eighty-percent'>The 80% setup</a> works if T is within the first three pieces of the next bag.
+</p>
+<mino-board>
+__________
+____Z__J__
+___ZZSSJJJ
+___ZSSIIII
+</mino-board>
+<h4>See OSZ</h4>
+<p>
+A cute traffic light setup. (You'll know it when you see it.) There are many other queue-based setups for IJSZ 2nd, but this is probably the most memorable. The one solution saves L.
+</p>
+<mino-board>
+I_________
+I________J
+I__SSZZ__J
+I_SS__ZZJJ
+</mino-board>
+<mino-board>
+XJJIIIITTT
+XJSSOOZZTX
+XSSXXXXZZX
+XJXXOOXXXX
+</mino-board>
+<h4>I in first two</h4>
+<p>
+This 3-piece setup (hold J) is 100% PC if I is within the first two pieces of the next bag. <em>Not</em> 100% if I is third. The six solves shown here cover every queue, and save J, L, Z, Z, Z, O, respectively. The last solve is redundant if you preferentially use the 80% setup when you see T.
+</p>
+<mino-board>
+I_________
+I_________
+I_SSZZ____
+ISS__ZZ___
+</mino-board>
+<mino-board>
+XJJTTTSSLL
+XJZZTSSOOL
+XJXXXXIIII
+XXXZZXXOOL
+</mino-board>
+<mino-board>
+XJJTTTSSOO
+XJZZTSSJOO
+XJXXXXIIII
+XXXZZXXJJJ
+</mino-board>
+<mino-board>
+XJJTJJSSLL
+XJTTJSSOOL
+XJXXXXIIII
+XXXTJXXOOL
+</mino-board>
+<mino-board>
+XLLLSSTOOJ
+XIIIITTOOJ
+XLXXXXTJJJ
+XXXSSXXJJJ
+</mino-board>
+<mino-board>
+XLLLSSTJOO
+XIIIITTJJJ
+XLXXXXTJOO
+XXXSSXXJJJ
+</mino-board>
+<mino-board>
+XTLLJJSSZI
+XTTLJSSZZI
+XTXXXXJJJI
+XXXLJXXZJI
+</mino-board>
+<h4>Guaranteed save-O recovery</h4>
+<p>
+The <a href='#shoe'>shoe</a> setup has a guaranteed save-O recovery. This has a substantially lower PC rate (66.98%) and average score, in exchange for being easy and unfailable. (The other setups do not have nice recoveries.) Make sure to keep the IJSZ pieces together, rather than having the I piece on the wall opposite of the JSZ shoe. The four routes shown below cover every queue, but do not reach the maximum attainable save-O PC rate; it helps to use other PCO-like solutions when applicable.
+</p>
+<mino-board>
+__________
+__________
+IS________
+ISS_______
+IJSZZ_____
+IJJJZZ____
+</mino-board>
+<mino-board>
+OO________
+OO________
+XXZZLLIIII
+XXXZZLTJJJ
+XXXXXLTTSS
+XXXXXXTSSJ
+</mino-board>
+<mino-board>
+OO________
+OO________
+XXZZLLTJJJ
+XXXZZLTTSS
+XXXXXLTSSJ
+XXXXXXIIII
+</mino-board>
+<mino-board>
+OO________
+OO________
+XXZZLLTJJJ
+XXXZZLIIII
+XXXXXLTTSS
+XXXXXXTSSJ
+</mino-board>
+<mino-board>
+OO________
+OO________
+XXIIIIZZLL
+XXXJJJTZZL
+XXXXXJTTSS
+XXXXXXTSSL
+</mino-board>
+<p>
+With O touching the wall, DPC, SPC and 2L continuations are possible. With 180° spins, the first two cover every possible queue of the next bag and lead to the same resulting field.
+</p>
+<mino-board>
+__________
+_Z________
+ZZ_______I
+ZTTTLLOOJI
+XXTSSLOOJI
+XXSS_L_JJI
+</mino-board>
+<mino-board>
+__________
+_Z________
+ZZ_______I
+ZTTT_J_LLI
+XXTSSJOOLI
+XXSSJJOOLI
+</mino-board>
+<mino-board>
+XXLLLJJJOO
+XXLIIIIJOO
+</mino-board>
+</div>
+</details>
+</section>
+
+<section>
 <h3><a id='ttsz-specific'>TTSZ</a></h3>
 <div class='first-pc-examples'>
 <p>Comes from Jigsaw. (Can also come from Grace, but it's always possible to get ITSZ, JTSZ/LTSZ or OTSZ instead.)</p>
@@ -5586,7 +5862,7 @@ XLXXOOX
 </mino-board>
 </div>
 <p>
-Although TTSZ doesn't have bad column parity, it can be shown using mino distance that it has no tetris solve. Thus, the main concern scoring-wise is the leftover piece going into DPC. (Some of the queue-based TSZ 7th t-spin setups can probably be adapted for TTSZ 2nd. More research needed.)
+Although TTSZ doesn't have bad column parity, it can be shown that it has no tetris solve. Thus, the main concern scoring-wise is the leftover piece going into DPC. (Some of the queue-based TSZ 7th t-spin setups can probably be adapted for TTSZ 2nd. More research needed.)
 </p>
 <p>
 There's a 100% save-OSZ 3p setup, a 98.81% 4p extension (86.35% save-IOTSZ), and a 99.92% save-OTSZ 4p extension. The first extension is usually easier to solve, although it has lower PC rate and worse saves.
