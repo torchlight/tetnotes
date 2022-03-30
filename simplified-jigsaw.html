@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>Ultimate simplified Jigsaw loop</title>
+<script src='mino-board.js'></script>
+<style>
+html
+{
+	font-family: sans-serif;
+	font-size: 14px;
+	background-color: #e4e4e4;
+	color: #111;
+}
+
+a {color: #0066cc;}
+a:visited {color: #6a40c6;}
+a:active {color: #ee0000;}
+a:hover {background-color: #ffffff;}
+
+section
+{
+	margin-bottom: 2.5rem;
+}
+
+mino-board > svg
+{
+	margin-right: 16px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+</style>
+
+</head>
+<body>
+<noscript><p>This page uses JavaScript to render diagrams.</p></noscript>
+<main>
+<h1>Ultimate simplified Jigsaw loop</h1>
+<p>
+This is the Jigsaw DPC loop distilled to the absolute bare minimum you have to learn to reliably complete 14-line, 5-bag PC loops. (100% chance as long as you don't mess up.)
+</p>
+<p>
+(I don't recommend it, but it's here just as a proof of concept. The patterns were found by stickmancomic.)
+</p>
+<section>
+<h2>Bag 1</h2>
+<p>
+At least one of these four patterns can be built (Z&lt;T, S&lt;T, T&lt;S&lt;Z, T&lt;Z&lt;S respectively). Prefer the first two when possible because they give an extra t-spin. These lead to the same resulting field.
+</p>
+<mino-board>
+ILLLT_____
+ILZTT_____
+IZZSSOOJJJ
+IZSSTOO__J
+</mino-board>
+<mino-board>
+_____TJJJI
+_____TTSJI
+LLLOOZZSSI
+L__OOTZZSI
+</mino-board>
+<br>
+<mino-board>
+IZZLL_____
+ITZZL_____
+ITTSSOOJJJ
+ITSSLOO__J
+</mino-board>
+<mino-board>
+_____JJSSI
+_____JSSTI
+LLLOOZZTTI
+L__OOJZZTI
+</mino-board>
+<br>
+<mino-board>
+XXXXX_____
+XXXXX_____
+XXXXXXX__X
+</mino-board>
+<mino-board>
+_____XXXXX
+_____XXXXX
+X__XXXXXXX
+</mino-board>
+</section>
+<section>
+<h2>Bag 2</h2>
+<p>
+At least one of these two patterns can be built. The first one has a small chance of including a 4-line PC. The second one is only rarely needed (IO&lt;Z&lt;L, 1/12 chance). These lead to the same resulting field.
+</p>
+<mino-board>
+T___J_____
+TTSSJ_____
+TSSJJ_IIII
+XXXXXLLLOO
+XXXXXLZZOO
+XXXXXXXZZX
+</mino-board>
+<mino-board>
+T___J_____
+TTSSJ_____
+TSSJJ_ZZOO
+XXXXXLLLOO
+XXXXXLIIII
+XXXXXXXZZX
+</mino-board>
+<br>
+<mino-board>
+X___X_____
+XXXXX_____
+XXXXX_XXXX
+</mino-board>
+</section>
+<section>
+<h2>Bag 3</h2>
+<p>
+At least one of these two patterns can be built, and guarantee a perfect clear with the S piece kept in hold. (Note that in the mirrored version, you can still get a perfect clear with the S piece saved by <em>not</em> mirroring the TZ shape.)
+</p>
+<mino-board>
+TTTZZIJJLL
+XTZZXIJOOL
+XXXXXIJOOL
+XXXXXIXXXX
+</mino-board>
+<mino-board>
+TTTZZILOOJ
+XTZZXILOOJ
+XXXXXILLJJ
+XXXXXIXXXX
+</mino-board>
+</section>
+<section>
+<h2>Bag 4</h2>
+<p>
+This starts with the S piece in hold, or if you're lucky enough to have not used hold yet, as the first piece in the queue. At least one of these two patterns can be built, and lead to the same resulting field. Place the S piece in the corner first.
+</p>
+<mino-board>
+I_________
+IOO_______
+IOO_S_LJJJ
+ISSTSSLZZJ
+SSTTTSLLZZ
+</mino-board>
+<mino-board>
+I_________
+IOO_______
+IOO_S_ZZLL
+ISSTSSJZZL
+SSTTTSJJJL
+</mino-board>
+<br>
+<mino-board>
+X_________
+XXX_______
+XXX_X_XXXX
+</mino-board>
+</section>
+<section>
+<h2>Bag 5</h2>
+<p>
+At least one of these two patterns can be built, and guarantee a perfect clear. Congratulations, you have completed a PC loop!
+</p>
+<mino-board>
+TTTSSIJJLL
+XTSSZIJOOL
+XXXZZIJOOL
+XXXZXIXXXX
+</mino-board>
+<mino-board>
+TTTSSILOOJ
+XTSSZILOOJ
+XXXZZILLJJ
+XXXZXIXXXX
+</mino-board>
+</section>
+<section>
+<h2>Optimising for score</h2>
+<p>
+If you decide to stray from the path of minimality, here are some things you can learn to improve the scoring prospects of this loop.
+</p>
+<section>
+<h3>Bag 3</h3>
+<p>Learn the other <a href='second-pc.html#tub-plus-horizontal-i'>tub+I 2nd PC solves</a>. While the 8-line PC is already guaranteed with the two solves in the main loop, using the extra solves will let you finish with a tetris PC more often.</p>
+</section>
+<section>
+<h3>Bag 4</h3>
+<p>Learn DPC for extra S/Z and extra O. (At the time of writing, there is no good up-to-date resource on DPC that is not a <a href='https://www.youtube.com/watch?v=bG242y1XIjs'>video</a>.)</p>
+</section>
+<section>
+<h3>Bag 5</h3>
+<p>This additional solution has a potential t-spin single or t-spin double, which is worth more than a tetris (except in Guideline games, where TSS + triple PC &gt; tetris PC &gt; TSD + double PC &gt; everything else). While the bag-4 setup of the main loop is obsoleted by DPC, this shape does show up again in one of the optional extra-O DPC setups.</p>
+<mino-board>
+ZZIIIISSLL
+XZZJJSSOOL
+XXXJTTTOOL
+XXXJXTXXXX
+</mino-board>
+</section>
+<section>
+<h3>Bag 2</h3>
+<p>Learn the other <a href='https://docs.google.com/document/d/13EGXMdc4s_zRhp9VFD7Wq8VhLhAj_6MA4Cge0pvo0m8/edit'>Jigsaw perfect clear solves</a>. You will also need to learn the accompanying 2nd PC cases that can result from them, as well as the remaining DPC cases (extra I, extra T, and extra J/L).</p>
+</section>
+</section>
+</main>
+<script>
+function load()
+{
+	document.querySelectorAll('*').forEach(el => {
+		let whitespace = [...el.childNodes].filter(x => (x.nodeType === 3 && x.textContent.trim() === ''));
+		for (let node of whitespace)
+		{
+			el.removeChild(node);
+		}
+	});
+}
+
+window.addEventListener('load', load);
+</script>
+</body>
+</html>
