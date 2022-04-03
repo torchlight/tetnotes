@@ -30,22 +30,21 @@ mino-board > svg
 	margin-bottom: 8px;
 }
 </style>
-
 </head>
 <body>
 <noscript><p>This page uses JavaScript to render diagrams.</p></noscript>
 <main>
 <h1>Ultimate simplified Jigsaw loop</h1>
 <p>
-This is the Jigsaw DPC loop distilled to the absolute bare minimum you have to learn to reliably complete 14-line, 5-bag PC loops. 100% chance of getting (at least) two perfect clears every 14 lines, as long as you don't mess up.
+This is the Jigsaw DPC loop distilled to the absolute bare minimum needed to reliably complete 14-line, 5-bag PC loops. You are guaranteed to get at least two perfect clears every 14 lines, as long as you don't mess up. The patterns were found by stickmancomic.
 </p>
 <p>
-(I don't recommend it, but it's here just as a proof of concept. The patterns were found by stickmancomic.)
+This simplified Jigsaw loop can be gradually expanded towards "full" Jigsaw, one of the most popular methods for claiming high ranks on the TETR.IO Blitz and Jstris Ultra leaderboards. This is unlike <a href='https://harddrop.com/wiki/Crowbar'>Crowbar v1</a> (another easy 14-line PC loop) or <a href='https://tetrisopener.wicurio.com/index.php?ET%E7%A0%B2'>ET Cannon</a> (also a 14-line loop, but not easy), which are dead ends that can't be improved much further,
 </p>
 <section>
 <h2>Bag 1</h2>
 <p>
-At least one of these four patterns can be built (Z&lt;T, S&lt;T, T&lt;S&lt;Z, T&lt;Z&lt;S respectively). Prefer the first two when possible because they give an extra t-spin. These lead to the same resulting field.
+At least one of these four patterns can be built (Z&lt;T, S&lt;T, TS&lt;Z, TZ&lt;S respectively). These lead to the same resulting field.
 </p>
 <mino-board>
 ILLLT_____
@@ -83,11 +82,14 @@ _____XXXXX
 _____XXXXX
 X__XXXXXXX
 </mino-board>
+<p>
+If multiple choices are available, prefer the first two because they give an extra t-spin. The t-spin can also sometimes be delayed to upgrade it to a t-spin single.
+</p>
 </section>
 <section>
 <h2>Bag 2</h2>
 <p>
-At least one of these two patterns can be built. The first one has a small chance of including a 4-line PC. The second one is only rarely needed (IO&lt;Z&lt;L, 1/12 chance). These lead to the same resulting field.
+At least one of these two patterns can be built. The second one is only rarely needed (IO&lt;Z&lt;L, 1/12 chance). These lead to the same resulting field.
 </p>
 <mino-board>
 T___J_____
@@ -111,11 +113,14 @@ X___X_____
 XXXXX_____
 XXXXX_XXXX
 </mino-board>
+<p>
+Look out for a potential PC with the first pattern (doable roughly 10% of the time).
+</p>
 </section>
 <section>
 <h2>Bag 3</h2>
 <p>
-At least one of these two patterns can be built, and guarantee a perfect clear with the S piece left over. (Note that in the mirrored version, you can still get a perfect clear with the S piece saved by <em>not</em> mirroring the TZ shape.)
+At least one of these two patterns can be built (O&lt;J or O&lt;L, JL&lt;O respectively), and guarantee a perfect clear with the S piece unused.
 </p>
 <mino-board>
 ZZTTTIJJLL
@@ -131,9 +136,9 @@ XXXXXIXXXX
 </mino-board>
 </section>
 <section>
-<h2>Bag 4</h2>
+<h2>Bag 4 (+ bag 3 leftover)</h2>
 <p>
-This starts with the S piece in hold, or if you're lucky enough to have not used hold yet, as the first piece in the queue. At least one of these two patterns can be built, and lead to the same resulting field. Place the S piece in the corner first.
+At least one of these two patterns can be built (Z&lt;J, J&lt;Z respectively), and lead to the same resulting field. Place bag 3's S piece in the corner first.
 </p>
 <mino-board>
 I_________
@@ -159,7 +164,7 @@ XXX_X_XXXX
 <section>
 <h2>Bag 5</h2>
 <p>
-At least one of these two patterns can be built, and guarantee a perfect clear. Congratulations, you have completed a PC loop!
+At least one of these two patterns can be built (O&lt;J or O&lt;L, JL&lt;O respectively), and guarantee a perfect clear. Congratulations, you have completed a PC loop!
 </p>
 <mino-board>
 TTTSSIJJLL
@@ -177,29 +182,28 @@ XXXZXIXXXX
 <section>
 <h2>Optimising for score</h2>
 <p>
-If you decide to stray from the path of minimality, here are some things you can learn to improve the scoring prospects of this loop.
+Here are some things you can learn to improve the scoring prospects of this loop.
 </p>
 <section>
 <h3>Bag 3</h3>
-<p>Learn the other <a href='second-pc.html#tub-plus-horizontal-i'>tub+I 2nd PC solves</a>. While the 8-line PC is already guaranteed with the two solves in the main loop, using the extra solves will let you finish with a tetris PC more often.</p>
+<p>
+Learn the other <a href='second-pc.html#tub-plus-horizontal-i'>tub + I 2nd PC solves</a>. Besides the two solves shown above, there are six more solves that can be used to increase the chance of getting a tetris PC (from 2/7 to 4/7) and the chance of saving O going into the next bag.
+</p>
 </section>
 <section>
-<h3>Bag 4</h3>
-<p>Learn DPC for extra S/Z and extra O. (At the time of writing, there is no good up-to-date resource on DPC that is not a <a href='https://www.youtube.com/watch?v=bG242y1XIjs'>video</a>.)</p>
-</section>
-<section>
-<h3>Bag 5</h3>
-<p>This additional solution has a potential t-spin single or t-spin double, which is worth more than a tetris (except in Guideline games, where TSS + triple PC &gt; tetris PC &gt; TSD + double PC &gt; everything else). While the bag-4 setup of the main loop is obsoleted by DPC, this shape does show up again in one of the optional extra-O DPC setups.</p>
-<mino-board>
-ZZIIIISSLL
-XZZJJSSOOL
-XXXJTTTOOL
-XXXJXTXXXX
-</mino-board>
+<h3>Bags 4 and 5</h3>
+<p>
+Learn DPC for extra S/Z and extra O. (At the time of writing, there is no good up-to-date resource on DPC that is not a <a href='https://www.youtube.com/watch?v=bG242y1XIjs'>video</a>.)
+</p>
+<p>
+One of the extra-S/Z setups is kinda nasty (extra S, S before O, aka "lime DPC"). You may, optionally, continue using the setup shown here as a fallback.
+</p>
 </section>
 <section>
 <h3>Bag 2</h3>
-<p>Learn the other <a href='https://docs.google.com/document/d/13EGXMdc4s_zRhp9VFD7Wq8VhLhAj_6MA4Cge0pvo0m8/edit'>Jigsaw perfect clear solves</a>. You will also need to learn the accompanying 2nd PC cases that can result from them, as well as the remaining DPC cases (extra I, extra T, and extra J/L).</p>
+<p>
+Learn the other <a href='https://docs.google.com/document/d/13EGXMdc4s_zRhp9VFD7Wq8VhLhAj_6MA4Cge0pvo0m8/edit'>Jigsaw perfect clear solves</a>. You will also need to learn the accompanying 2nd PC cases that can result from them, as well as the remaining DPC cases (I, T, and J/L).
+</p>
 </section>
 </section>
 </main>
