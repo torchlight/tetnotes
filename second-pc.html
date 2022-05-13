@@ -101,6 +101,11 @@ summary
 {
 	margin-right: 16px;
 }
+
+ul.compact
+{
+	padding-left: 20px;
+}
 </style>
 <script>let __LOAD = performance.now();</script>
 </head>
@@ -799,7 +804,7 @@ XXX____XXX
 XXX____XXX
 </mino-board>
 <p>
-Minimal covering set is quite large, but the solves are all just IJLS/IJLZ boxes. Skimming may be required
+Minimal covering set is quite large, but the solves are all just IJLS/IJLZ boxes. Skimming may be required.
 </p>
 <mino-board>
 XTTTLOOJJJ
@@ -883,7 +888,13 @@ ITTTOO____
 Normal builds: <span class='build-list'>JOTS/LOTZ, IJOT/ILOT (prefer different setup)</span>.
 </p>
 
-<p>This setup should only be used if you see a T piece early in the next bag, from which you can get a t-spin null for extra points. The solves for early T are identical to the previous setup.</p>
+<p>
+This setup should only be used if you see a T piece early in the next bag (first two pieces), from which you can get a t-spin null for extra points. The solves for early T are identical to the previous setup.
+</p>
+
+<p>
+While this setup still has 100% PC if T is the third piece of the next bag, there are some queues where this forces J or L to be saved.
+</p>
 
 </section>
 <section>
@@ -1468,122 +1479,6 @@ Reference: <a href='https://knewjade.github.io/tetris-knowledge/2pcsystem/second
 </section>
 
 <section>
-<h3><a id='jaws-precursor-hold-t'>Jaws precursor, hold T (100%)</a></h3>
-<div class='setup-display'>
-<mino-board class='generic-setup'>
-__________
-___X______
-XXXXXX____
-XXXXX_____
-</mino-board>
-<mino-board class='specific-setup' data-hold='t'>
-__________
-___Z______
-OOZZSS____
-OOZSS_____
-</mino-board>
-<mino-board class='specific-setup' data-hold='t'>
-__________
-______S___
-____ZZSSOO
-_____ZZSOO
-</mino-board>
-<mino-board class='specific-setup' data-hold='t'>
-__________
-___L______
-JLLLSS____
-JJJSS_____
-</mino-board>
-<mino-board class='specific-setup' data-hold='t'>
-__________
-______J___
-____ZZJJJL
-_____ZZLLL
-</mino-board>
-<mino-board class='specific-setup' data-hold='t'>
-__________
-___J______
-LLLJJJ____
-LIIII_____
-</mino-board>
-<mino-board class='specific-setup' data-hold='t'>
-__________
-______L___
-____LLLJJJ
-_____IIIIJ
-</mino-board>
-</div>
-<p>
-100% PC.
-</p>
-
-<p>
-Normal builds: <span class='build-list'>OTSZ, JLTS/JLTZ (not 100%; prefer different setup), IJLT (two builds; not 100%; prefer different setup)</span>.
-</p>
-
-<p>
-Freestyle-solving the 3-piece setup is not substantially different from the 4-piece setup, since most solutions place the first T piece in the same place anyway. However, it's always possible to save O/S/Z with the 3-piece setup, which is not true of the 4-piece setup ("only" 99.21%).
-</p>
-
-<p>
-This is probably not practical.
-</p>
-
-<details>
-<summary>Solves</summary>
-<div class='solves' data-automirror='yes'>
-<mino-board>
-JIIIISSTLL
-JJJXSSTTTL
-XXXXXXTZZL
-XXXXXTTTZZ
-</mino-board>
-<mino-board>
-OOLLLTJJJI
-OOLXTTTSJI
-XXXXXXTSSI
-XXXXXTTTSI
-</mino-board>
-<mino-board>
-OOLLLTTTTI
-OOLXTTTTJI
-XXXXXXSSJI
-XXXXXSSJJI
-</mino-board>
-<mino-board>
-OOLLLTIIII
-OOLXTTTJJJ
-XXXXXXTZZJ
-XXXXXTTTZZ
-</mino-board>
-<mino-board>
-JIIIISSTTT
-JJJXSSZZLL
-XXXXXXTZZL
-XXXXXTTTTL
-</mino-board>
-<mino-board>
-OOLLLSSJJJ
-OOLXSSIIII
-XXXXXXTTTT
-XXXXXTTTTJ
-</mino-board>
-<p>
-This is a minimal covering set of save-O/S/Z solutions. All of these solutions use two T pieces, and you have to keep in mind that for some of the solutions, you may be forced to place the first T in different locations depending on the rest of the queue.
-</p>
-<!--
-fumen of the solves
-https://fumen.zui.jp/?v115@9gg0zhR4wwhli0A8R4ywglF8wwBtglE8ywBtJeAgH9?gRpilwwi0whRpglA8ywQ4g0whF8wwR4whE8ywQ4whJeAAA9?gRpilzwwhRpglA8zwg0whF8R4g0whE8R4h0whJeAAA9gRpi?lwwzhRpglA8ywi0F8wwBtg0E8ywBtJeAAA9gg0zhR4ywi0A?8R4BthlF8wwBtglE8zwglJeAAA9gRpilR4i0RpglA8R4zhF?8zwE8zwg0JeAAA
--->
-</div>
-</details>
-
-<p>
-Reference: <a href='https://knewjade.github.io/tetris-knowledge/2pcsystem/second_with_t.html#otsz'>knewjade's with-T OTSZ</a>.
-</p>
-</section>
-
-<section>
 <h3><a id='pco-plus-heart'>PCO + heart (100%)</a></h3>
 <div class='setup-display'>
 <mino-board class='generic-setup'>
@@ -1694,16 +1589,12 @@ IIII_____T
 </p>
 
 <p>
-Normal builds: <span class='build-list'>JOTZ/LOTS, IJOT/ILOT (first build no hold), IJTZ/ILTS, JOTS/LOTZ (not 100%; prefer different setup), JTSZ/LTSZ (not 100%; prefer different setup), IJTS/ILTZ (not 100%; prefer different setup)</span>.<br>
+Normal builds: <span class='build-list'>JOTZ/LOTS, IJOT/ILOT (first build no hold), IJTZ/ILTS (prefer different setup), JOTS/LOTZ (not 100%; prefer different setup), JTSZ/LTSZ (not 100%; prefer different setup), IJTS/ILTZ (not 100%; prefer different setup)</span>.<br>
 Dupe builds: quite a number (not included here).
 </p>
 
 <p>
 4968/5040 = 98.57% chance of saving O, S or Z, with the remaining 1.43% always being possible to save T.
-</p>
-
-<p>
-The main use of this setup is that it can be built in many ways, especially for cases that don't have other 100%-build 100%-solve 4-piece setups. The tetris chance is nonzero, but still low (18.10%). Generally should be avoided.
 </p>
 
 <details>
@@ -1827,141 +1718,6 @@ none    0
 </section>
 
 <section>
-<h3><a id='box-plus-central-t'>Box + central T (100%)</a></h3>
-<div class='setup-display'>
-<mino-board class='generic-setup'>
-_______XXX
-_______XXX
-___X___XXX
-__XXX__XXX
-</mino-board>
-<mino-board class='specific-setup'>
-_______JJJ
-_______OOJ
-___T___OOL
-__TTT__LLL
-</mino-board>
-<mino-board class='specific-setup'>
-LLL_______
-LOO_______
-JOO___T___
-JJJ__TTT__
-</mino-board>
-
-<mino-board class='specific-setup'>
-_______JJJ
-_______LSJ
-___T___LSS
-__TTT__LLS
-</mino-board>
-<mino-board class='specific-setup'>
-LLL_______
-LZJ_______
-ZZJ___T___
-ZJJ__TTT__
-</mino-board>
-</div>
-<p>
-100% PC.
-</p>
-
-<p>
-Normal builds: <span class='build-list'>JLOT (two builds needed; prefer different setup), JLTS/JLTZ (prefer different setup)</span>.<br>
-Dupe builds: <span class='build-list'>IOOT (no hold), IJJT/ILLT (no hold)</span>, etc.
-</p>
-
-<p>
-The smallest covering set is quite large, even when considering mirrored solves to be the same. 5028/5040 = 99.76% save O/S/Z, with the remaining 12 queues ([ISZ]![JL]!OT) being forced to save either I or T. Practically speaking, it may be much better to just solve this freestyle rather than using memorised solutions… or just use different setups. JLTS/JLTZ and JLOT all have easier setups. The dupe 2nds for which this can be built are also extremely rare.
-</p>
-
-<details>
-<summary>Solves</summary>
-<div class='solves' data-automirror='yes'>
-<mino-board>
-JJTIIIIXXX
-JTTTLLLXXX
-JSSXLOOXXX
-SSXXXOOXXX
-</mino-board>
-<mino-board>
-LLLJJJIXXX
-LTTTSJIXXX
-OOTXSSIXXX
-OOXXXSIXXX
-</mino-board>
-<mino-board>
-IIIITTTXXX
-LOOZZTJXXX
-LOOXZZJXXX
-LLXXXJJXXX
-</mino-board>
-<mino-board>
-IIIITTTXXX
-LLLZZTJXXX
-LSSXZZJXXX
-SSXXXJJXXX
-</mino-board>
-<mino-board>
-TTTIIIIXXX
-JJSSLLLXXX
-JSSXLOOXXX
-JTXXXOOXXX
-</mino-board>
-<mino-board>
-IJJZZLLXXX
-IJSSZZLXXX
-ISSXTTTXXX
-IJXXXTLXXX
-</mino-board>
-<mino-board>
-IJJZZOOXXX
-IJSSZZLXXX
-ISSXLLLXXX
-IJXXXOOXXX
-</mino-board>
-<mino-board>
-TTTJJJIXXX
-LTSSOOIXXX
-LSSXOOIXXX
-LLXXXJIXXX
-</mino-board>
-<mino-board>
-LLLIIIIXXX
-STTTJJJXXX
-SSTXZZJXXX
-LSXXXZZXXX
-</mino-board>
-<mino-board>
-IJJZZOOXXX
-ITTTZZLXXX
-IJTXLLLXXX
-IJXXXOOXXX
-</mino-board>
-<mino-board>
-ZZSSTTTXXX
-LZZIIIIXXX
-LSSXJJJXXX
-LLXXXTJXXX
-</mino-board>
-<mino-board>
-ZZSSJJJXXX
-LZZIIIIXXX
-LSSXTTTXXX
-LLXXXTJXXX
-</mino-board>
-<p>
-These twelve solves and their mirrors cover every queue. In the first solve, an S spin can be used to tuck the S piece underneath the T piece. The second solve has a potential t-spin null + tetris, while the ninth solve has a potential TSD.
-</p>
-</details>
-<!--
-$ java -jar sfinder-fixed-180.jar cover --tetfu v115@EhC8GeC8CeA8CeC8BeC8BeC8JezLYZAFLDmClcJSAV?DEHBEooRBPoAVBzCmPCpAAAAvhE3pBirBVqBOpBRwB v115@EhC8GeC8CeA8CeC8BeC8BeC8JeTJYZAFLDmClcJSAV?DEHBEooRBPoAVBJNmPCsAAAAvhEZnB/rBFqBGrBipB v115@EhC8GeC8CeA8CeC8BeC8BeC8JeeMYZAFLDmClcJSAV?DEHBEooRBKoAVB6yKxCpAAAAvhEUmBKpBzpBlrBxuB v115@EhC8GeC8CeA8CeC8BeC8BeC8Je3JYZAFLDmClcJSAV?DEHBEooRBToAVBqXExCpAAAAvhEesBUrBipBlrBxuB v115@EhC8GeC8CeA8CeC8BeC8BeC8JezLYZAFLDmClcJSAV?DEHBEooRBPoAVBz/DxCpAAAAvhEXlBOpBimBlpBRwB v115@EhC8GeC8CeA8CeC8BeC8BeC8JelLYZAFLDmClcJSAV?DEHBEooRBUoAVBT+TPC6AAAAvhEXlBZkBasBupBUrB v115@EhC8GeC8CeA8CeC8BeC8BeC8JeyLYZAFLDmClcJSAV?DEHBEooRBMoAVBTePFDvAAAAvhEXlBZkBupBUmBzrB v115@EhC8GeC8CeA8CeC8BeC8BeC8JeZHYZAFLDmClcJSAV?DEHBEooRBJoAVBvyTxCqAAAAvhETmBKpBXlBlkBGrB v115@EhC8GeC8CeA8CeC8BeC8BeC8Je0LYZAFLDmClcJSAV?DEHBEooRBaoAVBz/VWCpAAAAvhE/pBmmBFlBipBRwB v115@EhC8GeC8CeA8CeC8BeC8BeC8JeyLYZAFLDmClcJSAV?DEHBEooRBMoAVBpXmPCvAAAAvhEZkBUhBFlBupBzrB v115@EhC8GeC8CeA8CeC8BeC8BeC8JemLYZAFLDmClcJSAV?DEHBEooRBKoAVBMeLuC0AAAAvhEKpBRmB0fBXlBlrB v115@EhC8GeC8CeA8CeC8BeC8BeC8JeeMYZAFLDmClcJSAV?DEHBEooRBKoAVBUdNFDsAAAAvhElpB3hBxkBUmBipB --mirror yes
-
-OR  = 100.00 % [5040/5040]
-AND = 0.00 % [0/5040]
--->
-</section>
-
-<section>
 <h3><a id='anti-pco-precursor-hold-i'>Anti-PCO precursor, hold I (100%)</a></h3>
 <div class='setup-display'>
 <mino-board class='generic-setup'>
@@ -2039,6 +1795,54 @@ XXXXXTTTZZ
 OOLLLIIIIJ
 OOLXTTTSSJ
 XXXXXTSSJJ
+</mino-board>
+<p>
+These are the additional solves needed to avoid saving I.
+</p>
+<mino-board>
+OOLLLIIIII
+OOLXZZJJJI
+XXXXXZZTJI
+XXXXXXTTTI
+</mino-board>
+<mino-board>
+OOLLLTJJJI
+OOLXTTTSSI
+XXXXXIIIII
+XXXXXXSSJI
+</mino-board>
+<p>
+These are the additional save-OSZ t-spin and tetris solves.
+</p>
+<mino-board>
+OOLLLTTTII
+OOLXZZTJII
+XXXXXZZJII
+XXXXXXJJII
+</mino-board>
+<mino-board>
+JIIIISSOOI
+JJJXSSTOOI
+XXXXXTTTLI
+XXXXXXLLLI
+</mino-board>
+<mino-board>
+OOLLLIIIII
+OOLXTTTSSI
+XXXXXTJJJI
+XXXXXXSSJI
+</mino-board>
+<mino-board>
+OOLLLJJJII
+OOLXTTTZII
+XXXXXTZZII
+XXXXXXZJII
+</mino-board>
+<mino-board>
+OOLLLIIIII
+OOLXTTTZJI
+XXXXXTZZJI
+XXXXXXZJJI
 </mino-board>
 </div>
 </details>
@@ -2390,7 +2194,7 @@ Dupe builds: <span class='build-list'>IJJO/ILLO (no hold), JJOZ/LLOS, JJOS/LLOZ 
 </p>
 
 <p>
-While this setup can be built in two ways for some piece combinations, the solves are not substantially simplified based on side. For JLOS/JLOZ in particular, both ways are always buildable, and the fail queues can always be avoided by choosing based on the first two pieces of the next bag: if the first two pieces are JZ, place O on the left, and otherwise place O on the right. This makes the setup effectively 100% PC.
+While this setup can be built in two ways for some piece combinations, the solves are not substantially simplified based on side. When both sides are buildable, it's always possible to avoid the fail queues, so the setup is effectively 100%.
 </p>
 
 <details>
@@ -2688,6 +2492,30 @@ ______JJSS
 ______JSSL
 ______JLLL
 </mino-board>
+<mino-board class='specific-setup dupe' data-hold='i'>
+__________
+______JJJJ
+______OOJJ
+______OOJJ
+</mino-board>
+<mino-board class='specific-setup dupe' data-hold='i'>
+__________
+LLLL______
+LLOO______
+LLOO______
+</mino-board>
+<mino-board class='specific-setup dupe' data-hold='i'>
+__________
+______JJZJ
+______JZZJ
+______JZJJ
+</mino-board>
+<mino-board class='specific-setup dupe' data-hold='i'>
+__________
+LSLL______
+LSSL______
+LLSL______
+</mino-board>
 </div>
 <p>
 100% PC.
@@ -2695,12 +2523,60 @@ ______JLLL
 
 <p>
 Normal builds: <span class='build-list'>IJLS/IJLZ (two builds needed), IJLO (two builds needed; prefer different setup)</span>.<br>
-Dupe builds: quite a number (not included here).
+Dupe builds: <span class='build-list'>IJJO/ILLO, IJJZ/ILLS (not 100%)</span>.
 </p>
 
 <p>
 The solves are exactly the same as for the full 4×4 box, but here the I piece can be used in the 6×4 part early. Theoretically 100% save-O/S/Z, with 93.10% save-O.
 </p>
+
+<details>
+<summary>Solves</summary>
+<div class='solves' data-automirror='yes'>
+<p>
+Only the 6×4 part is shown here.
+</p>
+<mino-board>
+TTTZSS
+JJZZLL
+JTZSSL
+JIIIIL
+</mino-board>
+<mino-board>
+TTTZLL
+JJZZSS
+JTZSSL
+JIIIIL
+</mino-board>
+<mino-board>
+JJZZLL
+JOOZZL
+JOOTTT
+IIIITL
+</mino-board>
+<mino-board>
+LLLSSZ
+LTSSZZ
+TTTJJJ
+IIIIZJ
+</mino-board>
+<mino-board>
+JJJTLL
+OOTTTL
+OOJZZL
+IIIIZZ
+</mino-board>
+<mino-board>
+IJJSSZ
+IJSSZZ
+ITTTZL
+IJTLLL
+</mino-board>
+<p>
+These six solves and their mirrors cover every queue, and always save O, S or Z. In most cases, placing the I piece in the 6×4 region first will work; the sixth solve is the only one here where this can backfire (the I and S pieces block placing the T piece).
+</p>
+</div>
+</details>
 </section>
 
 <section>
@@ -2751,7 +2627,7 @@ This setup is mainly for JLSZ, where both sides can be built. In general, if S o
 </p>
 
 <p>
-Theoretically always possible to save O, S, Z or T, with 98.37% save-O/S/Z.
+Theoretically 98.37% save-O/S/Z, with the remainder saving T.
 </p>
 
 <details>
@@ -2764,10 +2640,16 @@ XXXXSSILLX
 XXXXXSIXXX
 </mino-board>
 <mino-board>
-XZZLLJIIII
-XXZZLJJJSS
-XXXXLOOSSX
-XXXXXOOXXX
+XZZLLIJJOO
+XXZZLIJTOO
+XXXXLITTTX
+XXXXXIJXXX
+</mino-board>
+<mino-board>
+XZZIIIILLL
+XXZZOOJLSS
+XXXXOOJSSX
+XXXXXJJXXX
 </mino-board>
 <mino-board>
 XZZIIIILOO
@@ -2782,10 +2664,31 @@ XXXXJJJSSX
 XXXXXTJXXX
 </mino-board>
 <mino-board>
-XZZIIIILLL
-XXZZOOJLSS
-XXXXOOJSSX
-XXXXXJJXXX
+XZZJJJILLL
+XXZZSJITTT
+XXXXSSILTX
+XXXXXSIXXX
+</mino-board>
+<mino-board>
+XTTTLLLJSS
+XXTIIIIJJJ
+XXXXLOOSSX
+XXXXXOOXXX
+</mino-board>
+<mino-board>
+XTTTSLLJJJ
+XXTIIIIOOJ
+XXXXSSLOOX
+XXXXXSLXXX
+</mino-board>
+<p>
+These eight solutions cover every queue, and always save O, S, Z or T.
+</p>
+<mino-board>
+XZZLLJIIII
+XXZZLJJJSS
+XXXXLOOSSX
+XXXXXOOXXX
 </mino-board>
 <mino-board>
 XZZIIIIJJJ
@@ -2793,14 +2696,8 @@ XXZZSTTTLJ
 XXXXSSLLLX
 XXXXXSTXXX
 </mino-board>
-<mino-board>
-XZZLLIJJOO
-XXZZLIJTOO
-XXXXLITTTX
-XXXXXIJXXX
-</mino-board>
 <p>
-Not a covering set, just some common/useful solutions in no particular order.
+These additional solutions are useful to know. The first one covers early OS, while the second one has a potential t-spin (late IO).
 </p>
 </div>
 </details>
@@ -2897,7 +2794,7 @@ IIIISS____
 </p>
 
 <p>
-Normal builds: <span class='build-list'>IOSZ (no hold), IJLS/IJLZ</span>.<br>
+Normal builds: <span class='build-list'>IOSZ (no hold), IJLS/IJLZ (prefer different setup)</span>.<br>
 Dupe builds: <span class='build-list'>IIJL (no hold), JJSZ/LLSZ (no hold), IJJO/ILLO (no hold), IJJZ/ILLS (no hold)</span>.
 </p>
 
@@ -2973,11 +2870,6 @@ https://fumen.zui.jp/?v115@9gg0zhR4hlA8i0A8R4BtglG8wwBtF8ywglA8JeAgH9?gRpili0whA
 Reference: <a href='https://knewjade.github.io/tetris-knowledge/2pcsystem/second_without_t.html#id4'>knewjade's without-T pattern E', PC priority</a>, <a href='https://four.lol/perfect-clears/2nd#5-9397'>FOUR: 2nd PC Patterns, without-T Pattern 5</a>.
 </p>
 </section>
-
-<!--
-TODO:
-add the jaws precursor, hold I setup
--->
 
 <section>
 <h3><a id='box-minus-s'>Box minus S/Z (99.21% to 99.64%)</a></h3>
@@ -3381,7 +3273,7 @@ LIIII_____
 </mino-board>
 </div>
 <p>
-92.50% PC.
+92.50% PC; 92.66% PC with 180° spins. If T isn't last, the PC rate is 4310/4320 = 99.77% (with 180° spins), while if T is last, the PC rate is 360/720 = 50% (180° doesn't matter).
 </p>
 
 <p>
@@ -3392,20 +3284,89 @@ Dupe builds: <span class='build-list'>IJJL/IJLL (no hold), ITTS/ITTZ (no hold), 
 <details>
 <summary>Solves</summary>
 <div class='solves' data-automirror='yes'>
-<mino-board>
-XXX_______
-XXXX______
-XXXX______
-XXXXX_____
-</mino-board>
 <p>
-blah blah blah
+If T isn't last, most of the time you can extend the hill into a box and do a PCO-like solve in the remaining area.
 </p>
 <mino-board>
-XXX_______
-XXXX______
-XXXX______
+XXXLL_____
+XXXXL_____
+XXXXL_____
 XXXXX_____
+</mino-board>
+<mino-board>
+XXXJJJ____
+XXXXSJ____
+XXXXSS____
+XXXXXS____
+</mino-board>
+<mino-board>
+XXXIIII___
+XXXXOOJ___
+XXXXOOJ___
+XXXXXJJ___
+</mino-board>
+<mino-board>
+XXXIIII___
+XXXXLLL___
+XXXXLOO___
+XXXXXOO___
+</mino-board>
+<mino-board>
+XXXIIII___
+XXXXJJJ___
+XXXXZZJ___
+XXXXXZZ___
+</mino-board>
+<mino-board>
+XXXIIII___
+XXXXSLL___
+XXXXSSL___
+XXXXXSL___
+</mino-board>
+<p>
+If T is last, these seven solves cover the 360 solvable queues.
+</p>
+<mino-board>
+XXXZZSSTTT
+XXXXZZOOLL
+XXXXSSOOTL
+XXXXXIIIIL
+</mino-board>
+<mino-board>
+XXXTTTZJJJ
+XXXXTZZSSJ
+XXXXIIIIOO
+XXXXXZSSOO
+</mino-board>
+<mino-board>
+XXXTTTZZLL
+XXXXTOOZZL
+XXXXIIIISS
+XXXXXOOSSL
+</mino-board>
+<mino-board>
+XXXTTTSSOO
+XXXXTSSJOO
+XXXXZZIIII
+XXXXXZZJJJ
+</mino-board>
+<mino-board>
+XXXTTTOOLL
+XXXXZZOOSS
+XXXXTZZSSL
+XXXXXIIIIL
+</mino-board>
+<mino-board>
+XXXZZSSTTT
+XXXXSSOOLL
+XXXXZZOOTL
+XXXXXIIIIL
+</mino-board>
+<mino-board>
+XXXTTTSSLL
+XXXXTSSOOL
+XXXXZZIIII
+XXXXXZZOOL
 </mino-board>
 </div>
 </details>
@@ -3788,10 +3749,6 @@ Normal builds: <span class='build-list'>IJSZ/ILSZ (second build not 100%), IJOZ/
 Dupe builds: <span class='build-list'>IIJS/IILZ, ITTS/ITTZ (no hold), JTTZ/LTTS (no hold), JJLZ/JLLS, OOJS/OOLZ, IJOO/ILOO, IJJL/IJLL, JOTT/LOTT, TTSZ (two builds needed), JTTS/LTTZ (not 100%), IJZZ/ILSS (not 100%)</span>.
 </p>
 
-<p>
-This setup is pretty much only useful as a backup for IJSZ/ILSZ when better setups can't be used.
-</p>
-
 <details>
 <summary>Solves</summary>
 <div class='solves' data-automirror='yes'>
@@ -3809,6 +3766,80 @@ XX________
 XXX_______
 XXXXX_____
 XXXXXX____
+</mino-board>
+<p>
+Provided that the setup isn't shifted, it has a guaranteed save-O recovery. The four routes shown below cover every queue (but do not reach the maximum attainable save-O PC rate).
+</p>
+<mino-board>
+OO________
+OO________
+XXZZLLIIII
+XXXZZLTJJJ
+XXXXXLTTSS
+XXXXXXTSSJ
+</mino-board>
+<mino-board>
+OO________
+OO________
+XXZZLLTJJJ
+XXXZZLTTSS
+XXXXXLTSSJ
+XXXXXXIIII
+</mino-board>
+<mino-board>
+OO________
+OO________
+XXZZLLTJJJ
+XXXZZLIIII
+XXXXXLTTSS
+XXXXXXTSSJ
+</mino-board>
+<mino-board>
+OO________
+OO________
+XXIIIIZZLL
+XXXJJJTZZL
+XXXXXJTTSS
+XXXXXXTSSL
+</mino-board>
+<p>
+With O touching the wall, DPC, SPC and 2L continuations are possible. With 180° spins, the first two cover every possible queue of the next bag and lead to the same resulting field.
+</p>
+<mino-board>
+__________
+_Z________
+ZZ_______I
+ZTTTLLOOJI
+XXTSSLOOJI
+XXSS_L_JJI
+</mino-board>
+<mino-board>
+__________
+_Z________
+ZZ_______I
+ZTTT_J_LLI
+XXTSSJOOLI
+XXSSJJOOLI
+</mino-board>
+<mino-board>
+__________
+__________
+OO__LLL___
+OO_ZLSS__J
+XXZZSSTTTJ
+XXZIIIITJJ
+</mino-board>
+<mino-board>
+__________
+_________L
+_______LLL
+IIIISTTTZJ
+XXOOSSTZZJ
+XXOO_S_ZJJ
+</mino-board>
+<mino-board>
+XXLLLJJJOO
+XXLIIIIJOO
 </mino-board>
 </div>
 </details>
@@ -4427,7 +4458,7 @@ XXXXZSSTTT
 </mino-board>
 </div>
 <p>
-<a href='#jaws-precursor-plus-t'>Jaws precursor + T</a> (or <a href='#jaws-precursor-hold-t'>hold T</a>) works, but the solves are sometimes unusual. I use a 3p setup for this.
+<a href='#jaws-precursor-plus-t'>Jaws precursor + T</a> works, but the solves are sometimes unusual. I use a 3p setup for this.
 </p>
 <mino-board>
 __________
@@ -4500,6 +4531,68 @@ XXXXXXXXZJ
 </mino-board>
 </div>
 </details>
+<p>
+With early J and L in the next bag, it's also possible to mimic the TSZ 7th setup. This (or its mirror) can be built if, in the current bag, O is last or S &lt; T or Z &lt; T; it is <em>not</em> always buildable.
+</p>
+<mino-board>
+__SS______
+_SS_______
+_TZZ______
+TTTZZ_____
+</mino-board>
+<details>
+<summary>Solves (see-JL qb)</summary>
+<div class='solves' data-automirror='no'>
+<mino-board>
+JJXXSSIIII
+JXXSSTTTLL
+JXXXZZTOOL
+XXXXXZZOOL
+</mino-board>
+<mino-board>
+JJXXIIIIOO
+JXXZZTTTOO
+JXXXZZTLOO
+XXXXXLLLOO
+</mino-board>
+<p>
+These two solves cover every queue with J and L within the first three pieces.
+</p>
+<mino-board>
+JJXXZZIIII
+JXXTTTSSLL
+JXXXTSSOOL
+XXXXXZZOOL
+</mino-board>
+<mino-board>
+JJXXIIIISS
+JXXTTTZZLL
+JXXXTOOZZL
+XXXXXOOSSL
+</mino-board>
+<mino-board>
+JJXXIIIIOO
+JXXTTTSSOO
+JXXXTSSLOO
+XXXXXLLLOO
+</mino-board>
+<mino-board>
+JJXXIIIIOO
+JXXTTTZZOO
+JXXXTOOZZL
+XXXXXOOLLL
+</mino-board>
+<mino-board>
+JJXXZZOOOO
+JXXTTTOOOO
+JXXXTIIIIL
+XXXXXZZLLL
+</mino-board>
+<p>
+These are the other potential-TSD solves. In all, there is a 474/720 = 65.83% chance of getting a TSD (along with a tiny chance of only getting a TSS) with this setup, which is better than the 288/720 = 40% chance of getting a tetris with the main 3p setup.
+</p>
+</div>
+</details>
 </section>
 
 <section>
@@ -4526,9 +4619,197 @@ XXXXTTTSSL
 </mino-board>
 </div>
 <p>
-The <a href='#knoll-plus-tophat'>knoll + top hat</a> setup is the basic setup to use for this case. If you're comfortable with it, <a href='#jaws-precursor-plus-t'>jaws precursor + T</a> has higher solving chance and 0% forced save J/L. The simplest method, however, is to use queue-based setups.
+There are many trade-offs that can be made for this case. Pick your poison.
 </p>
-<details>
+<table>
+<tr>
+<th>Setup(s)</th>
+<th>Advantages</th>
+<th>Disadvantages</th>
+</tr>
+<tr>
+<td>
+<a href='#knoll-plus-tophat'>Knoll + top hat</a>
+<br>
+<mino-board>
+__________
+__OO______
+__OO__SST_
+_IIIISSTTT
+</mino-board>
+</td>
+<td><ul class='compact'>
+<li>Very easy save-O solves with high chance (86%).</li>
+<li>High chance of t-spin mini null.</li>
+</ul></td>
+<td><ul class='compact'>
+<li>Not 100%.</li>
+<li>The non-save-O solves are weird.</li>
+</ul></td>
+</tr>
+<tr>
+<td>
+<a href='#jaws-precursor-plus-t'>Jaws precursor + T</a>
+<br>
+<mino-board>
+__________
+______T___
+___SSTTTOO
+__SSIIIIOO
+</mino-board>
+</td>
+<td><ul class='compact'>
+<li>Setup can also be used for other cases.</li>
+</ul></td>
+<td><ul class='compact'>
+<li>Not 100%.</li>
+<li>Most solves are weird.</li>
+<li>Low chance of tetris or t-spin.</li>
+</ul></td>
+</tr>
+<tr>
+<td>
+<a href='#anti-pco-precursor-hold-i'>Anti-PCO precursor (4p)</a>
+<br>
+<mino-board>
+__________
+______S___
+_____TSSOO
+IIIITTTSOO
+</mino-board>
+</td>
+<td><ul class='compact'>
+<li>Moderately easy solves.</li>
+</ul></td>
+<td><ul class='compact'>
+<li>Tetris outright impossible, low chance of t-spin.</li>
+<li>Has forced save I.</li>
+</ul></td>
+</tr>
+<tr>
+<td>
+<a href='#anti-pco-precursor-hold-i'>Anti-PCO precursor (3p)</a>
+<br>
+<mino-board>
+__________
+______S___
+_____TSSOO
+____TTTSOO
+</mino-board>
+</td>
+<td><ul class='compact'>
+<li>Can fall back to the 4p setup in a pinch.</li>
+<li>100% save-O/S/Z.</li>
+<li>Much better tetris and t-spin chances than the 4p version.</li>
+</ul></td>
+<td><ul class='compact'>
+<li>The extra solves to avoid saving I are weird.</li>
+<li>Many of the additional tetris solves save J/L.</li>
+</ul></td>
+</tr>
+<tr>
+<td>
+<a href='#iots-qb-setups-solves'>Queue-based 5p setups</a>
+<br>
+<div id='iots-qb-setup-fields'><mino-board>
+__________
+__OO_SS___
+__OOSSSST_
+_IIIISSTTT
+</mino-board><mino-board>
+__________
+_ZZ___OO__
+_TZZSSOO__
+TTTSSIIII_
+</mino-board><mino-board>
+_________I
+_____SS__I
+OO_TSST__I
+OOTTTTTT_I
+</mino-board><mino-board>
+__________
+J___SS____
+JJJSST_OO_
+IIIITTTOO_
+</mino-board><mino-board>
+__________
+______SS_L
+_OO_TSSLLL
+_OOTTTIIII
+</mino-board></div>
+<script>
+(function() {
+let boards = document.querySelectorAll('#iots-qb-setup-fields mino-board');
+let n = boards.length;
+let x = 0;
+for (let i = 0; i < n; i++) {boards[i].style.display = 'none';}
+function callback()
+{
+	boards[x].style.display = 'none';
+	x = (x+1)%n;
+	boards[x].style.display = 'inline';
+	setTimeout(callback, 600);
+}
+callback();
+})();
+</script>
+</td>
+<td><ul class='compact'>
+<li>Every setup needs only one solve.</li>
+<li>Said one solve always has tetris chance.</li>
+<li>High chance of t-spin mini null.</li>
+<li>100% save-O/S/Z.</li>
+</ul></td>
+<td><ul class='compact'>
+<li>Determining which of the five setups to use sometimes requires looking at all three next-bag previews.</li>
+</ul></td>
+</tr>
+<tr>
+<td>
+<a href='#iots-easy-3p-setup-solves'>Easy 3p</a>
+<br>
+<mino-board>
+__________
+__________
+__T__SS___
+_TTTSSIIII
+</mino-board>
+</td>
+<td><ul class='compact'>
+<li>Very easy solves.</li>
+<li>Most common solve (76%) saves O.</li>
+</ul></td>
+<td><ul class='compact'>
+<li>With the minimal covering set, J/L saves are common (24%).</li>
+<li>Has forced save J/L.</li>
+<li>Many dissimilar additional solves needed to minimise save-J/L.</li>
+</ul></td>
+</tr>
+<tr>
+<td>
+<a href='#iots-symmetric-3p-setup-solves'>Symmetric 3p</a>
+<br>
+<mino-board>
+_________I
+_________I
+___SST___I
+__SSTTT__I
+</mino-board>
+</td>
+<td><ul class='compact'>
+<li>Many t-spin and tetris (and TS0+tet) solutions.</li>
+<li>100% save-O/S/Z.</li>
+</ul></td>
+<td><ul class='compact'>
+<li>Extra-score solutions are hard to spot in real time.</li>
+<li>Many additional solves needed to avoid save-I.</li>
+</ul></td>
+</tr>
+</table>
+<p>
+At the time of writing, there is no consensus on which is best. I personally use the queue-based setups.
+</p>
+<details id='iots-qb-setups-solves'>
 <summary>Queue-based setups and solves</summary>
 <div class='solves' data-automirror='yes'>
 <p>
@@ -4616,6 +4897,154 @@ IXXXXXXXXX
 <p>
 Save Z. The ITO placement is mirrored compared to the early J setup. Guaranteed if L &lt; T. The ITO and next-bag L placements are identical to the <a href='#ito-plus-j'>ITO + L</a> setup.
 </p>
+</div>
+</details>
+<details id='iots-easy-3p-setup-solves'>
+<summary>Easy 3p setup and solves</summary>
+<div class='solves' data-automirror='yes'>
+<p>
+The setup is basically what's used for early Z in the queue-based setup set. Keep the O piece in hold.
+</p>
+<mino-board>
+__________
+__________
+__T__SS___
+_TTTSSIIII
+</mino-board>
+<p>
+If Z is before T, extend to the early-Z queue-based setup. This solution saves O. (The exact conditions for using this solution are: Z &lt; T or Z &lt; O or (Z last and (S &lt; T or S &lt; O)); this can be used 16/21 = 76.19% of the time.)
+</p>
+<mino-board>
+__________
+_______OO_
+__T__SSOO_
+_TTTSSIIII
+</mino-board>
+<mino-board>
+IJJTTTSSLL
+IJZZTSSXXL
+IJXZZXXXXL
+IXXXXXXXXX
+</mino-board>
+<p>
+Otherwise, place O in the trench formed by the T and S pieces. These solutions save J and L, respectively.
+</p>
+<mino-board>
+__________
+___OO_____
+__TOOSS___
+_TTTSSIIII
+</mino-board>
+<mino-board>
+ZZIIIISSLL
+TZZXXSSOOL
+TTXXXXXOOL
+TXXXXXXXXX
+</mino-board>
+<mino-board>
+ZZIIIISSOO
+TZZXXSSJOO
+TTXXXXXJJJ
+TXXXXXXXXX
+</mino-board>
+<p>
+These four additional solutions can be used to minimise the chance of saving J or L.
+</p>
+<mino-board>
+JJIIIISSLL
+TTTOOSSOOL
+JTXOOXXOOL
+JXXXXXXXXX
+</mino-board>
+<mino-board>
+LLLTSSIIII
+LZTTTJJJOO
+ZZXSSXXJOO
+ZXXXXXXXXX
+</mino-board>
+<mino-board>
+LLLTTTIIII
+OOZZTJJJOO
+OOXZZXXJOO
+LXXXXXXXXX
+</mino-board>
+<mino-board>
+LLLTSSIIII
+OOTTTJJJOO
+OOXSSXXJOO
+LXXXXXXXXX
+</mino-board>
+</div>
+</details>
+<details id='iots-symmetric-3p-setup-solves'>
+<summary>Symmetric 3p setup and solves</summary>
+<div class='solves' data-automirror='yes'>
+<mino-board>
+_________I
+_________I
+___SST___I
+__SSTTT__I
+</mino-board>
+<mino-board>
+_________I
+_________I
+___TZZ___I
+__TTTZZ__I
+</mino-board>
+<p>
+These three solutions and their mirrors cover every queue. ("Mirror" with the rightmost column ignored, of course.)
+</p>
+<mino-board>
+JJTZZLLOOX
+JTTTZZLOOX
+JSSXXXLOOX
+SSXXXXXOOX
+</mino-board>
+<mino-board>
+TTTIIIIOOX
+LTSSJJJOOX
+LSSXXXJOOX
+LLXXXXXOOX
+</mino-board>
+<mino-board>
+ILLLSSJJJX
+ILZSSTTTJX
+IZZXXXTOOX
+IZXXXXXOOX
+</mino-board>
+<p>
+These are the additional save-OSZ t-spin solutions.
+</p>
+<mino-board>
+IIIISSJJJX
+LOOSSTTTJX
+LOOXXXTOOX
+LLXXXXXOOX
+</mino-board>
+<mino-board>
+IIIISSJJJX
+OOLSSTTTJX
+LLLXXXTOOX
+OOXXXXXOOX
+</mino-board>
+<mino-board>
+ILLLSSJJJX
+IOOSSTTTJX
+IOOXXXTOOX
+ILXXXXXOOX
+</mino-board>
+<mino-board>
+LLLIIIIOOX
+STTTJJJOOX
+SSTXXXJOOX
+LSXXXXXOOX
+</mino-board>
+<mino-board>
+LLLZZJJJIX
+STTTZZOOIX
+SSTXXXOOIX
+LSXXXXXJIX
+</mino-board>
 </div>
 </details>
 </section>
@@ -4913,7 +5342,7 @@ XXXXXTSSXX
 </mino-board>
 </div>
 <p>
-Like IJLT, this is a very rare 2nd outside of PC mode runs. The <a href='#box-plus-central-t'>box + central T</a> setup is technically an option, but there's a much easier setup.
+Like IJLT, this is a very rare 2nd outside of PC mode runs.
 </p>
 <mino-board>
 __________
@@ -5759,70 +6188,13 @@ XXXLJXXZJI
 </mino-board>
 <h4>Guaranteed save-O recovery</h4>
 <p>
-The <a href='#shoe'>shoe</a> setup has a guaranteed save-O recovery. This has a substantially lower PC rate (66.98%) and average score, in exchange for being easy and unfailable. (The other setups do not have nice recoveries.) Make sure to keep the IJSZ pieces together, rather than having the I piece on the wall opposite of the JSZ shoe. The four routes shown below cover every queue, but do not reach the maximum attainable save-O PC rate; it helps to use other PCO-like solutions when applicable.
+The <a href='#shoe'>shoe</a> setup has a guaranteed save-O recovery, and may actually be preferable over setups with higher PC rate but no guaranteed recovery (e.g. shoe + O).
 </p>
 <mino-board>
-__________
-__________
 IS________
 ISS_______
 IJSZZ_____
 IJJJZZ____
-</mino-board>
-<mino-board>
-OO________
-OO________
-XXZZLLIIII
-XXXZZLTJJJ
-XXXXXLTTSS
-XXXXXXTSSJ
-</mino-board>
-<mino-board>
-OO________
-OO________
-XXZZLLTJJJ
-XXXZZLTTSS
-XXXXXLTSSJ
-XXXXXXIIII
-</mino-board>
-<mino-board>
-OO________
-OO________
-XXZZLLTJJJ
-XXXZZLIIII
-XXXXXLTTSS
-XXXXXXTSSJ
-</mino-board>
-<mino-board>
-OO________
-OO________
-XXIIIIZZLL
-XXXJJJTZZL
-XXXXXJTTSS
-XXXXXXTSSL
-</mino-board>
-<p>
-With O touching the wall, DPC, SPC and 2L continuations are possible. With 180° spins, the first two cover every possible queue of the next bag and lead to the same resulting field.
-</p>
-<mino-board>
-__________
-_Z________
-ZZ_______I
-ZTTTLLOOJI
-XXTSSLOOJI
-XXSS_L_JJI
-</mino-board>
-<mino-board>
-__________
-_Z________
-ZZ_______I
-ZTTT_J_LLI
-XXTSSJOOLI
-XXSSJJOOLI
-</mino-board>
-<mino-board>
-XXLLLJJJOO
-XXLIIIIJOO
 </mino-board>
 </div>
 </details>
